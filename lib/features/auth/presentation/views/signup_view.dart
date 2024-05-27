@@ -27,7 +27,7 @@ class SignupView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(height: context.height / 12),
+                  SizedBox(height: context.height / 15),
                   Align(
                     alignment: Alignment.center,
                     child: SvgPicture.asset(

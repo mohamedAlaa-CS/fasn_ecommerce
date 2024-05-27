@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-
 // List<BrandsModel> changeListStringToListModel(List<String>? brandList) {
 //   List<BrandsModel> brandsList = [];
 //   for (var item in brandList ?? []) {

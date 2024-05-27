@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-
 // List<String> changeListModelToListString(
 //     {required List<BrandsEntity> brandsList}) {
 //   List<String> newList = [];
