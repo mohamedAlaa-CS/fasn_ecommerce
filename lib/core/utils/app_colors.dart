@@ -1,13 +1,15 @@
-abstract class AppColors {
-  static const String white = "0xffffffff";
-  static const String black = "0xff000000";
+import 'package:flutter/material.dart';
 
-  static const String primaryColor = "0xff080020";
-  static const String violateColor = "0xff140D2B";
-  static const String ligthColor = "0xffCECCD2";
-  static const String borderColor = "0xff5E596E";
-  static const String redColor = "0xffDF2323";
-  static const String ligthredColor = "0xffFF0000";
-  static const String yellowColor = "0xffFFC700";
-  static const String green = "0xff05F300";
+abstract class AppColors {
+  static const Color white = Color(0xffffffff);
+  static const Color black = Color(0xff000000);
+
+  static const Color primaryColor = Color(0xff080020);
+  static const Color violateColor = Color(0xff140D2B);
+  static const Color ligthColor = Color(0xffCECCD2);
+  static const Color borderColor = Color(0xff5E596E);
+  static const Color redColor = Color(0xffDF2323);
+  static const Color ligthredColor = Color(0xffFF0000);
+  static const Color yellowColor = Color(0xffFFC700);
+  static const Color green = Color(0xff05F300);
 }

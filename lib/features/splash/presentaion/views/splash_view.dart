@@ -1,19 +1,28 @@
-import 'package:fasn_ecommerce/generated/l10n.dart';
+import 'package:fasn_ecommerce/core/utils/app_colors.dart';
+import 'package:fasn_ecommerce/core/utils/app_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
-class SplashView extends StatelessWidget {
+class SplashView extends StatefulWidget {
   static const String routeName = '/';
   const SplashView({super.key});
 
   @override
+  State<SplashView> createState() => _SplashViewState();
+}
+
+class _SplashViewState extends State<SplashView> {
+  @override
+  void initState() {
+    Future.delayed(const Duration(seconds: 3), () {});
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          S.of(context).title,
-          style: const TextStyle(color: Colors.red),
-        ),
-      ),
+      backgroundColor: AppColors.primaryColor,
+      body: Center(child: SvgPicture.asset(AppStrings.logo)),
     );
   }
 }
