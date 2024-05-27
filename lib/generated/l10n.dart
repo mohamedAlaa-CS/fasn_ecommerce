@@ -50,11 +50,101 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `title app `
-  String get title {
+  /// `Welcome Back To Fasn`
+  String get welcome {
     return Intl.message(
-      'title app ',
-      name: 'title',
+      'Welcome Back To Fasn',
+      name: 'welcome',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please sign in with your mail`
+  String get please_login {
+    return Intl.message(
+      'Please sign in with your mail',
+      name: 'please_login',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `User Name`
+  String get user_name {
+    return Intl.message(
+      'User Name',
+      name: 'user_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get password {
+    return Intl.message(
+      'Password',
+      name: 'password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Login`
+  String get login {
+    return Intl.message(
+      'Login',
+      name: 'login',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your email`
+  String get enter_your_email {
+    return Intl.message(
+      'Enter your email',
+      name: 'enter_your_email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your password`
+  String get enter_your_password {
+    return Intl.message(
+      'Enter your password',
+      name: 'enter_your_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forgot password?`
+  String get forgot_password {
+    return Intl.message(
+      'Forgot password?',
+      name: 'forgot_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Donot have an account ?`
+  String get dont_have_account {
+    return Intl.message(
+      'Donot have an account ?',
+      name: 'dont_have_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create Account`
+  String get create_account {
+    return Intl.message(
+      'Create Account',
+      name: 'create_account',
       desc: '',
       args: [],
     );

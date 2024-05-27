@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      locale: const Locale('en'),
+      locale: const Locale('ar'),
       localizationsDelegates: const [
         S.delegate,
         GlobalMaterialLocalizations.delegate,
@@ -31,15 +31,3 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class TestLocal extends StatelessWidget {
-  const TestLocal({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(S.of(context).title),
-      ),
-    );
-  }
-}
