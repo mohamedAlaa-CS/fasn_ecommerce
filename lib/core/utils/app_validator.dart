@@ -20,7 +20,7 @@ class AppValidator {
   static String? passwordValidate(String? value) {
     if ((value ?? '').isEmpty) {
       return 'invalied passWord';
-    } else if (value!.length < 9) {
+    } else if (value!.length < 6) {
       return 'please enter a correct passWord';
     }
     return null;
