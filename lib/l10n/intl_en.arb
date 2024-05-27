@@ -8,5 +8,13 @@
     "enter_your_password": "Enter your password",
     "forgot_password": "Forgot password?",
     "dont_have_account": "Donot have an account ?",
-    "create_account": "Create Account"
+    "create_account": "Create Account",
+    "full_name": "Full Name",
+    "enter_your_full_name": "Enter your full name",
+    "mobile_number": "Mobile Number",
+    "enter_your_mobile_number": "Enter your mobile number",
+    "email_address": "Email Address",
+    "enter_your_email_address": "Enter your email address",
+    "confirm_password": "Confirm Password",
+    "sign_up": "Sign Up"
 }

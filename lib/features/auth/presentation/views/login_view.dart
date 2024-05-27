@@ -6,6 +6,7 @@ import 'package:fasn_ecommerce/core/utils/app_validator.dart';
 import 'package:fasn_ecommerce/core/widgets/app_text_form.dart';
 import 'package:fasn_ecommerce/core/widgets/main_buttom.dart';
 import 'package:fasn_ecommerce/core/widgets/main_text.dart';
+import 'package:fasn_ecommerce/features/auth/presentation/views/signup_view.dart';
 import 'package:fasn_ecommerce/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -99,7 +100,10 @@ class LoginPage extends StatelessWidget {
                         fontSize: 16,
                       ),
                       TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context)
+                                .pushNamed(SignupView.routeName);
+                          },
                           child: Text(
                             localization.create_account,
                             style: const TextStyle(

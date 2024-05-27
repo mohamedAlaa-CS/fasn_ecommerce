@@ -22,20 +22,32 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "confirm_password":
+            MessageLookupByLibrary.simpleMessage("Confirm Password"),
         "create_account":
             MessageLookupByLibrary.simpleMessage("Create Account"),
         "dont_have_account":
             MessageLookupByLibrary.simpleMessage("Donot have an account ?"),
+        "email_address": MessageLookupByLibrary.simpleMessage("Email Address"),
         "enter_your_email":
             MessageLookupByLibrary.simpleMessage("Enter your email"),
+        "enter_your_email_address":
+            MessageLookupByLibrary.simpleMessage("Enter your email address"),
+        "enter_your_full_name":
+            MessageLookupByLibrary.simpleMessage("Enter your full name"),
+        "enter_your_mobile_number":
+            MessageLookupByLibrary.simpleMessage("Enter your mobile number"),
         "enter_your_password":
             MessageLookupByLibrary.simpleMessage("Enter your password"),
         "forgot_password":
             MessageLookupByLibrary.simpleMessage("Forgot password?"),
+        "full_name": MessageLookupByLibrary.simpleMessage("Full Name"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
+        "mobile_number": MessageLookupByLibrary.simpleMessage("Mobile Number"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "please_login": MessageLookupByLibrary.simpleMessage(
             "Please sign in with your mail"),
+        "sign_up": MessageLookupByLibrary.simpleMessage("Sign Up"),
         "user_name": MessageLookupByLibrary.simpleMessage("User Name"),
         "welcome": MessageLookupByLibrary.simpleMessage("Welcome Back To Fasn")
       };
