@@ -1,4 +1,6 @@
 import 'package:fasn_ecommerce/core/di/injections.dart';
+import 'package:fasn_ecommerce/core/router/app_router.dart';
+import 'package:fasn_ecommerce/features/splash/presentaion/views/splash_view.dart';
 import 'package:fasn_ecommerce/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -23,7 +25,8 @@ class MyApp extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: S.delegate.supportedLocales,
-      home: const TestLocal(),
+      onGenerateRoute: AppRouter.onGenerateRoute,
+      initialRoute: SplashView.routeName,
     );
   }
 }
