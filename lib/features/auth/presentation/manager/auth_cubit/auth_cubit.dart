@@ -19,6 +19,7 @@ class AuthCubit extends Cubit<AuthState> {
   TextEditingController phoneController = TextEditingController();
   TextEditingController emailController1 = TextEditingController();
   TextEditingController passwordController1 = TextEditingController();
+  TextEditingController confirmpasswordController = TextEditingController();
 
   Usermodel? userModel;
 //! login ========
@@ -64,8 +65,26 @@ class AuthCubit extends Cubit<AuthState> {
     result.fold((error) {
       emit(AuthSignupFailed(error.message));
     }, (userModel) {
-      emit(AuthSignupSuccess());
+      emit(AuthSignupSuccess(userModel));
       this.userModel = userModel;
     });
+  }
+
+//! try signup
+  Future<void> trySignup() async {
+    if (signupFormKey.currentState!.validate()) {
+      return await signup();
+    }
+  }
+
+  IconData signupSuffix = Icons.visibility_outlined;
+  bool signupIsPassword = true;
+  void changeVisablitySignupPassword() {
+    signupIsPassword = !signupIsPassword;
+    signupSuffix = signupIsPassword
+        ? Icons.visibility_outlined
+        : Icons.visibility_off_outlined;
+
+    emit(SignupChangeVisabilityPasswordState());
   }
 }
