@@ -1,10 +1,11 @@
 import 'package:fasn_ecommerce/core/helper/extensions/assetss_widgets.dart';
 import 'package:fasn_ecommerce/core/utils/app_colors.dart';
 import 'package:fasn_ecommerce/core/utils/app_strings.dart';
+import 'package:fasn_ecommerce/core/utils/app_styles.dart';
 import 'package:fasn_ecommerce/core/widgets/app_text_form.dart';
 import 'package:fasn_ecommerce/features/home/presentaion/widgets/donts_indecator.dart';
 import 'package:fasn_ecommerce/features/home/presentaion/widgets/home_banner_page_view_widget.dart';
-import 'package:fasn_ecommerce/features/home/presentaion/widgets/home_category_widget.dart';
+import 'package:fasn_ecommerce/features/home/presentaion/widgets/home_category_list_view_widget.dart';
 import 'package:fasn_ecommerce/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -59,7 +60,7 @@ class _HomeViewState extends State<HomeView> {
               prefixIcon: Icons.search,
               hintText: S.of(context).hello,
               hintStyle:
-                  const TextStyle(fontSize: 18, color: AppColors.borderColor),
+                  AppStyles.style18.copyWith(color: AppColors.borderColor),
               fillColor: AppColors.violateColor,
             ),
             12.hSize,
@@ -70,9 +71,9 @@ class _HomeViewState extends State<HomeView> {
             ),
             10.hSize,
             DotsIndecator(currentIndex: currentIndex, dotNumber: 10),
-            HomeCategoryWidget(
-              imageUrl: imageurl,
-              title: 'short',
+            10.hSize,
+            HomeCategoryListView(
+              onTap: () {},
             ),
           ],
         ),

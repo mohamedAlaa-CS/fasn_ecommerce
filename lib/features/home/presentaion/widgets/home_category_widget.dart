@@ -1,4 +1,5 @@
 import 'package:fasn_ecommerce/core/helper/extensions/assetss_widgets.dart';
+import 'package:fasn_ecommerce/core/helper/extensions/context_size.dart';
 import 'package:fasn_ecommerce/core/utils/app_styles.dart';
 import 'package:flutter/material.dart';
 
@@ -14,8 +15,8 @@ class HomeCategoryWidget extends StatelessWidget {
         ClipRRect(
           borderRadius: BorderRadius.circular(12),
           child: Image.network(
-            height: 90,
-            width: 90,
+            height: context.height / 10,
+            width: context.width / 5,
             imageUrl,
             fit: BoxFit.cover,
           ),
