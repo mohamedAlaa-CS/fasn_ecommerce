@@ -73,7 +73,7 @@ class MainTextField extends StatelessWidget {
             prefixIcon: prefixIcon != null
                 ? InkWell(
                     onTap: prefixIconOnPressed ?? () {},
-                    child: Icon(prefixIcon, color: Colors.grey.shade600),
+                    child: Icon(prefixIcon, color: AppColors.white),
                   )
                 : null,
 
@@ -85,6 +85,7 @@ class MainTextField extends StatelessWidget {
                   )
                 : null,
             hintText: hintText,
+            hintStyle: hintStyle,
             //  hintStyle: hintStyle ?? Styles.font16W300,
             fillColor: fillColor ?? AppColors.white,
             filled: true,

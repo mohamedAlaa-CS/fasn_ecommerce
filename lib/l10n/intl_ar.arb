@@ -16,6 +16,7 @@
     "email_address": "البريد الالكتروني",
     "enter_your_email_address": "ادخل بريدك الالكتروني",
     "confirm_password": "تاكيد كلمة المرور",
-    "sign_up": "انشاء حساب"
+    "sign_up": "انشاء حساب",
+    "hello" : "مرحبا"
     
 }

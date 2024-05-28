@@ -16,5 +16,6 @@
     "email_address": "Email Address",
     "enter_your_email_address": "Enter your email address",
     "confirm_password": "Confirm Password",
-    "sign_up": "Sign Up"
+    "sign_up": "Sign Up",
+    "hello" : "Hello"
 }

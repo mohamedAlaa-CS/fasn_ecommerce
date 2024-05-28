@@ -17,6 +17,7 @@ class MainView extends StatelessWidget {
         var mainCubit = MainCubit.get(context);
         return Scaffold(
           backgroundColor: AppColors.primaryColor,
+          body: mainCubit.screens[mainCubit.currentIndex],
           bottomNavigationBar: BottomNavigationBar(
               currentIndex: mainCubit.currentIndex,
               onTap: (index) {

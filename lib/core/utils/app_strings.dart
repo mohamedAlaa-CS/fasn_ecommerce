@@ -13,4 +13,5 @@ class AppStrings {
   static const String personIcon = 'assets/images/personIcon.svg';
   static const String cartIcon = 'assets/images/cart_icon.svg';
   static const String searchIcon = 'assets/images/search_icon.svg';
+  static const String notificationIcon = 'assets/images/notifcation_icon.svg';
 }
