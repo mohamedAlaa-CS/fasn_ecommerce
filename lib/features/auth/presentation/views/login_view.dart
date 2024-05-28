@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:fasn_ecommerce/core/helper/extensions/assetss_widgets.dart';
 import 'package:fasn_ecommerce/core/helper/extensions/context_size.dart';
 import 'package:fasn_ecommerce/core/helper/functions/show_snack_bar.dart';
@@ -13,7 +11,7 @@ import 'package:fasn_ecommerce/core/widgets/main_text.dart';
 import 'package:fasn_ecommerce/features/auth/data/repos/auth_repo_imple.dart';
 import 'package:fasn_ecommerce/features/auth/presentation/manager/auth_cubit/auth_cubit.dart';
 import 'package:fasn_ecommerce/features/auth/presentation/views/signup_view.dart';
-import 'package:fasn_ecommerce/features/home/presentaion/manager/main_cubit/main_cubit.dart';
+import 'package:fasn_ecommerce/features/home/presentaion/views/main_view.dart';
 import 'package:fasn_ecommerce/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -42,6 +40,7 @@ class LoginPage extends StatelessWidget {
                       message: state.userModel.message ?? '',
                     );
                     LocalData.saveToken(state.userModel.data?.token ?? '');
+                    Navigator.of(context).pushNamed(MainView.routeName);
                   } else {
                     showSnackBar(
                       context,

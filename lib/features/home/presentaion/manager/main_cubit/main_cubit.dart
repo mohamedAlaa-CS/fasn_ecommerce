@@ -7,6 +7,13 @@ part 'main_state.dart';
 class MainCubit extends Cubit<MainState> {
   MainCubit() : super(MainInitial());
   static MainCubit get(context) => BlocProvider.of(context);
+  int currentIndex = 0;
+
+  changeIndex(int index) {
+    currentIndex = index;
+    emit(MainChangeIndexState());
+  }
+
   String currentLanguage = 'en';
 
   changeLanguage(String lang) {
@@ -14,5 +21,4 @@ class MainCubit extends Cubit<MainState> {
     LocalData.saveString('myLanguage', lang);
     emit(MainChangeLanguageState());
   }
-
 }

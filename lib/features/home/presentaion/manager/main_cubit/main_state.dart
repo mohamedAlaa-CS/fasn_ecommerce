@@ -6,3 +6,5 @@ sealed class MainState {}
 final class MainInitial extends MainState {}
 
 final class MainChangeLanguageState extends MainState {}
+
+final class MainChangeIndexState extends MainState {}
