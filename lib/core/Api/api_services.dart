@@ -2,7 +2,11 @@ import 'package:dio/dio.dart';
 import 'package:fasn_ecommerce/core/di/injections.dart';
 
 class ApiServices {
-  static var headers = {'Content-Type': 'application/json'};
+  static var headers = {
+    'Content-Type': 'application/json',
+    'Accept': 'application/json',
+    'lang': 'ar',
+  };
   static Future<Map<String, dynamic>> get({
     required String endPoint,
     Map<String, dynamic>? data,
