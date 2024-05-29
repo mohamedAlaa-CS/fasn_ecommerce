@@ -5,6 +5,7 @@ import 'package:fasn_ecommerce/core/widgets/app_text_form.dart';
 import 'package:fasn_ecommerce/features/home/presentaion/widgets/donts_indecator.dart';
 import 'package:fasn_ecommerce/features/home/presentaion/widgets/home_banner_page_view_widget.dart';
 import 'package:fasn_ecommerce/features/home/presentaion/widgets/home_category_list_view_widget.dart';
+import 'package:fasn_ecommerce/features/home/presentaion/widgets/product_gride_view.dart';
 import 'package:fasn_ecommerce/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
@@ -88,105 +89,6 @@ class _HomeViewState extends State<HomeView> {
           ]),
         ),
       ),
-    );
-  }
-}
-
-class ProductWidget extends StatelessWidget {
-  const ProductWidget({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      ClipRRect(
-        borderRadius: BorderRadius.circular(12),
-        child: Stack(children: [
-          AspectRatio(
-            aspectRatio: 1,
-            child: Image.network(
-              'https://images.unsplash.com/photo-1575936123452-b67c3203c357?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D',
-              fit: BoxFit.cover,
-              width: double.infinity,
-            ),
-          ),
-          Positioned.directional(
-            textDirection: Directionality.of(context),
-            end: 10,
-            top: 10,
-            child: Container(
-              padding: const EdgeInsetsDirectional.all(8),
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                color: AppColors.white,
-              ),
-              child: const Icon(Icons.favorite_outline),
-            ),
-          ),
-          if (true) ...{
-            Positioned.directional(
-              textDirection: Directionality.of(context),
-              start: 10,
-              top: 10,
-              child: Container(
-                padding: const EdgeInsetsDirectional.all(8),
-                decoration: BoxDecoration(
-                  color: AppColors.black,
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Text(
-                  '10% off',
-                  style: AppStyles.style12.copyWith(fontSize: 10),
-                ),
-              ),
-            ),
-          }
-        ]),
-      ),
-      10.hSize,
-      Text(
-        'One shoulder Top',
-        style: AppStyles.style16,
-        maxLines: 1,
-        overflow: TextOverflow.ellipsis,
-      ),
-      Row(
-        children: [
-          Text(
-            '10.00\$',
-            style: AppStyles.style12,
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-          ),
-          8.wSize,
-          Text(
-            '10.00\$',
-            style: AppStyles.style12.copyWith(
-              color: AppColors.borderColor,
-              decoration: TextDecoration.lineThrough,
-            ),
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-          ),
-        ],
-      ),
-    ]);
-  }
-}
-
-class ProdectGridVew extends StatelessWidget {
-  const ProdectGridVew({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return SliverGrid.builder(
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        mainAxisSpacing: 10,
-        crossAxisSpacing: 10,
-        childAspectRatio: 1 / 1.3,
-      ),
-      itemBuilder: (context, index) => const ProductWidget(),
-      itemCount: 15,
     );
   }
 }

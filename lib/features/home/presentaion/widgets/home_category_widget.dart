@@ -10,13 +10,15 @@ class HomeCategoryWidget extends StatelessWidget {
   final String title;
   @override
   Widget build(BuildContext context) {
+    bool isportrait =
+        MediaQuery.of(context).orientation == Orientation.portrait;
     return Column(
       children: [
         ClipRRect(
           borderRadius: BorderRadius.circular(12),
           child: Image.network(
-            height: context.height / 10,
-            width: context.width / 5,
+            height: isportrait ? context.height / 10 : context.width / 10,
+            width: isportrait ? context.width / 5 : context.height / 5,
             imageUrl,
             fit: BoxFit.cover,
           ),
