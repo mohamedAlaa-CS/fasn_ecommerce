@@ -259,6 +259,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Explore`
+  String get Explore {
+    return Intl.message(
+      'Explore',
+      name: 'Explore',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

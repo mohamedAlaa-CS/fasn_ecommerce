@@ -1,6 +1,7 @@
 import 'package:fasn_ecommerce/core/helper/extensions/context_size.dart';
 import 'package:fasn_ecommerce/core/utils/app_colors.dart';
 import 'package:fasn_ecommerce/core/utils/app_strings.dart';
+import 'package:fasn_ecommerce/features/category/presentation/widgets/category_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -23,6 +24,7 @@ class CategoryView extends StatelessWidget {
         ],
       ),
       backgroundColor: AppColors.primaryColor,
+      body: const CategoryListView(),
     );
   }
 }
