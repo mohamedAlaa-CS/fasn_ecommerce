@@ -1,6 +1,5 @@
 import 'package:fasn_ecommerce/core/helper/extensions/assetss_widgets.dart';
 import 'package:fasn_ecommerce/core/utils/app_colors.dart';
-import 'package:fasn_ecommerce/core/utils/app_strings.dart';
 import 'package:fasn_ecommerce/core/utils/app_styles.dart';
 import 'package:fasn_ecommerce/core/widgets/app_text_form.dart';
 import 'package:fasn_ecommerce/features/home/presentaion/widgets/donts_indecator.dart';
@@ -8,7 +7,6 @@ import 'package:fasn_ecommerce/features/home/presentaion/widgets/home_banner_pag
 import 'package:fasn_ecommerce/features/home/presentaion/widgets/home_category_list_view_widget.dart';
 import 'package:fasn_ecommerce/generated/l10n.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -40,58 +38,54 @@ class _HomeViewState extends State<HomeView> {
       child: Padding(
         padding:
             const EdgeInsetsDirectional.only(start: 10, end: 10, bottom: 10),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            // app bar =================
-            Row(
-              children: [
-                SvgPicture.asset(
-                  AppStrings.logo,
-                  height: 24,
-                ),
-                const Spacer(),
-                SvgPicture.asset(AppStrings.notificationIcon),
-              ],
-            ),
-            20.hSize,
-            // search text field  =============
-            MainTextField(
-              prefixIcon: Icons.search,
-              hintText: S.of(context).hello,
-              hintStyle:
-                  AppStyles.style18.copyWith(color: AppColors.borderColor),
-              fillColor: AppColors.violateColor,
-            ),
-            12.hSize,
-            HomeBannerPageViewWidget(
-              imageUrl: imageurl,
-              pageController: pageController,
-              title: 'hello mohamed alaa',
-            ),
-            10.hSize,
-            DotsIndecator(currentIndex: currentIndex, dotNumber: 10),
-            10.hSize,
-            HomeCategoryListView(
-              onTap: () {},
-            ),
-            10.hSize,
-            Row(children: [
-              Text(
-                S.of(context).products,
-                style: AppStyles.style20,
+        child: Scrollbar(
+          child: CustomScrollView(clipBehavior: Clip.antiAlias, slivers: [
+            SliverToBoxAdapter(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  // app bar =================,
+                  10.hSize,
+                  // search text field  =============
+                  MainTextField(
+                    prefixIcon: Icons.search,
+                    hintText: S.of(context).hello,
+                    hintStyle: AppStyles.style18
+                        .copyWith(color: AppColors.borderColor),
+                    fillColor: AppColors.violateColor,
+                  ),
+                  12.hSize,
+                  HomeBannerPageViewWidget(
+                    imageUrl: imageurl,
+                    pageController: pageController,
+                    title: 'hello mohamed alaa',
+                  ),
+                  10.hSize,
+                  DotsIndecator(currentIndex: currentIndex, dotNumber: 10),
+                  10.hSize,
+                  HomeCategoryListView(
+                    onTap: () {},
+                  ),
+                  10.hSize,
+                  Row(children: [
+                    Text(
+                      S.of(context).products,
+                      style: AppStyles.style20,
+                    ),
+                    const Spacer(),
+                    Text(
+                      S.of(context).view_all,
+                      style: AppStyles.style12
+                          .copyWith(color: AppColors.borderColor),
+                    ),
+                  ]),
+                  20.hSize,
+                  // const ProductWidget(),
+                ],
               ),
-              const Spacer(),
-              Text(
-                S.of(context).view_all,
-                style: AppStyles.style12.copyWith(color: AppColors.borderColor),
-              ),
-            ]),
-
-            10.hSize,
-            // const ProductWidget(),
-            const ProdectGridVew()
-          ],
+            ),
+            const ProdectGridVew(),
+          ]),
         ),
       ),
     );
@@ -184,17 +178,15 @@ class ProdectGridVew extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: GridView.builder(
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          mainAxisSpacing: 10,
-          crossAxisSpacing: 10,
-          childAspectRatio: 1 / 1.3,
-        ),
-        itemBuilder: (context, index) => const ProductWidget(),
-        itemCount: 10,
+    return SliverGrid.builder(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        mainAxisSpacing: 10,
+        crossAxisSpacing: 10,
+        childAspectRatio: 1 / 1.3,
       ),
+      itemBuilder: (context, index) => const ProductWidget(),
+      itemCount: 15,
     );
   }
 }
