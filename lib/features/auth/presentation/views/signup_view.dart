@@ -105,18 +105,6 @@ class SignupView extends StatelessWidget {
                             signupCubit.changeVisablitySignupPassword();
                           },
                         ),
-                        // 18.hSize,
-                        // MainTextField(
-                        //   controller: signupCubit.confirmpasswordController,
-                        //   validator: AppValidator.passwordValidate,
-                        //   title: localization.confirm_password,
-                        //   hintText: localization.enter_your_password,
-                        //   suffixIcon: signupCubit.signupSuffix,
-                        //   isobscure: signupCubit.signupIsPassword,
-                        //   suffixPressed: () {
-                        //     signupCubit.changeVisablitySignupPassword();
-                        //   },
-                        // ),
                         24.hSize,
                         if (state is AuthSignupLoading) ...{
                           const Center(

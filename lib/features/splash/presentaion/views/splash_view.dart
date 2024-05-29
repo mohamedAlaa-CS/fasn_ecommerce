@@ -1,5 +1,7 @@
 import 'package:fasn_ecommerce/core/utils/app_colors.dart';
 import 'package:fasn_ecommerce/core/utils/app_strings.dart';
+import 'package:fasn_ecommerce/core/utils/local_data.dart';
+import 'package:fasn_ecommerce/features/auth/presentation/views/login_view.dart';
 import 'package:fasn_ecommerce/features/home/presentaion/views/main_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -16,7 +18,9 @@ class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
     Future.delayed(const Duration(seconds: 3), () {
-      Navigator.of(context).pushNamed(MainView.routeName);
+      Navigator.of(context).pushNamed(
+        LocalData.token == null ? LoginPage.routeName : MainView.routeName,
+      );
     });
     super.initState();
   }
