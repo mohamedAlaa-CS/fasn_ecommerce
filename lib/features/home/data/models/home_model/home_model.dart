@@ -1,5 +1,5 @@
-import 'banner_model.dart';
-import 'product_model.dart';
+import 'package:fasn_ecommerce/features/home/data/models/home_model/banner_model.dart';
+import 'package:fasn_ecommerce/features/home/data/models/home_model/product_model.dart';
 
 class HomeModel {
   List<BannerModel>? banners;
