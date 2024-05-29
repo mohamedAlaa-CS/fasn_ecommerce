@@ -7,7 +7,7 @@ abstract class AuthRepo {
     required String email,
     required String password,
   });
-   Future<Either<Failure, Usermodel>> signup({
+  Future<Either<Failure, Usermodel>> signup({
     required String email,
     required String password,
     required String name,
