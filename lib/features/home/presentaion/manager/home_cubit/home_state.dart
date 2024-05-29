@@ -14,4 +14,15 @@ final class HomeFailed extends HomeState {
 
   HomeFailed(this.error);
 }
+
 final class PageControllerBanner extends HomeState {}
+
+final class CategoriesLoading extends HomeState {}
+
+final class CategoriesSuccess extends HomeState {}
+
+final class CategoriesFailed extends HomeState {
+  final String error;
+
+  CategoriesFailed(this.error);
+}

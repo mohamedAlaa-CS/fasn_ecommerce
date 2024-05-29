@@ -59,6 +59,7 @@ class HomeView extends StatelessWidget {
                         ),
                         10.hSize,
                         HomeCategoryListView(
+                          categoryList: homeCubit.categoriesList,
                           onTap: () {},
                         ),
                         10.hSize,

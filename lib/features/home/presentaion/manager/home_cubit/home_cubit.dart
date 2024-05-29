@@ -1,3 +1,4 @@
+import 'package:fasn_ecommerce/features/home/data/models/category_model.dart';
 import 'package:fasn_ecommerce/features/home/data/models/home_model/banner_model.dart';
 import 'package:fasn_ecommerce/features/home/data/models/home_model/product_model.dart';
 import 'package:fasn_ecommerce/features/home/data/repos/home_repo.dart';
@@ -26,6 +27,7 @@ class HomeCubit extends Cubit<HomeState> {
 
   final HomeRepo homeRepo;
   getHomeData() async {
+    await getCategoriesData();
     emit(HomeLoading());
     var result = await homeRepo.getHomeData();
     result.fold((erroe) {
@@ -34,6 +36,18 @@ class HomeCubit extends Cubit<HomeState> {
       emit(HomeSuccess());
       productList.addAll(data.products ?? []);
       bannerList.addAll(data.banners ?? []);
+    });
+  }
+
+  List<CategoryModel> categoriesList = [];
+  getCategoriesData() async {
+    emit(HomeLoading());
+    var result = await homeRepo.getCategoresData();
+    result.fold((erroe) {
+      emit(HomeFailed(erroe.message));
+    }, (data) {
+      emit(HomeSuccess());
+      categoriesList.addAll(data);
     });
   }
 }

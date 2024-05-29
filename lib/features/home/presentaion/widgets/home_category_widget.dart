@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:fasn_ecommerce/core/helper/extensions/assetss_widgets.dart';
 import 'package:fasn_ecommerce/core/helper/extensions/context_size.dart';
 import 'package:fasn_ecommerce/core/utils/app_styles.dart';
@@ -16,10 +17,10 @@ class HomeCategoryWidget extends StatelessWidget {
       children: [
         ClipRRect(
           borderRadius: BorderRadius.circular(12),
-          child: Image.network(
+          child: CachedNetworkImage(
             height: isportrait ? context.height / 10 : context.width / 10,
             width: isportrait ? context.width / 5 : context.height / 5,
-            imageUrl,
+            imageUrl: imageUrl,
             fit: BoxFit.cover,
           ),
         ),
