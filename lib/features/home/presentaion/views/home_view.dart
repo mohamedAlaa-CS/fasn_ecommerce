@@ -63,7 +63,10 @@ class HomeView extends StatelessWidget {
                           categoryList: homeCubit.categoriesList,
                           onTap: () {
                             Navigator.pushNamed(
-                                context, CategoryView.routeName);
+                              context,
+                              CategoryView.routeName,
+                              arguments: homeCubit.categoriesList,
+                            );
                           },
                         ),
                         10.hSize,

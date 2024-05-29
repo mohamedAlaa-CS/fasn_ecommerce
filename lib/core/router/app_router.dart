@@ -17,7 +17,12 @@ class AppRouter {
       case MainView.routeName:
         return MaterialPageRoute(builder: (context) => const MainView());
       case CategoryView.routeName:
-        return MaterialPageRoute(builder: (context) => const CategoryView());
+        final category = settings.arguments;
+        return MaterialPageRoute(
+          builder: (context) => CategoryView(
+            categoryList: category,
+          ),
+        );
     }
 
     return null;

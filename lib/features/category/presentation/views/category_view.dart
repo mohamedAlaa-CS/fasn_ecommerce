@@ -7,8 +7,8 @@ import 'package:flutter_svg/svg.dart';
 
 class CategoryView extends StatelessWidget {
   static const String routeName = 'category_view';
-  const CategoryView({super.key});
-
+  const CategoryView({super.key, required this.categoryList});
+  final categoryList;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +24,9 @@ class CategoryView extends StatelessWidget {
         ],
       ),
       backgroundColor: AppColors.primaryColor,
-      body: const CategoryListView(),
+      body: CategoryListView(
+        categoryList: categoryList,
+      ),
     );
   }
 }
