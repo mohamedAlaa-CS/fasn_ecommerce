@@ -1,4 +1,5 @@
 import 'package:fasn_ecommerce/core/helper/extensions/assetss_widgets.dart';
+import 'package:fasn_ecommerce/core/helper/functions/show_snack_bar.dart';
 import 'package:fasn_ecommerce/core/utils/app_colors.dart';
 import 'package:fasn_ecommerce/core/utils/app_styles.dart';
 import 'package:fasn_ecommerce/core/widgets/app_text_form.dart';
@@ -12,29 +13,8 @@ import 'package:fasn_ecommerce/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class HomeView extends StatefulWidget {
+class HomeView extends StatelessWidget {
   const HomeView({super.key});
-
-  @override
-  State<HomeView> createState() => _HomeViewState();
-}
-
-class _HomeViewState extends State<HomeView> {
-  late PageController pageController;
-  int currentIndex = 0;
-  final String imageurl =
-      'https://images.unsplash.com/photo-1575936123452-b67c3203c357?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D';
-  @override
-  void initState() {
-    pageController = PageController();
-    pageController.addListener(() {
-      currentIndex = pageController.page!.round();
-
-      setState(() {});
-    });
-
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -43,19 +23,21 @@ class _HomeViewState extends State<HomeView> {
         padding:
             const EdgeInsetsDirectional.only(start: 10, end: 10, bottom: 10),
         child: BlocProvider(
-          create: (context) => HomeCubit(HomeRepoImple()),
+          create: (context) => HomeCubit(HomeRepoImple())..getHomeData(),
           child: BlocConsumer<HomeCubit, HomeState>(
             listener: (context, state) {
-             
+              if (state is HomeFailed) {
+                showSnackBar(context, message: state.error, error: true);
+              }
             },
             builder: (context, state) {
+              var homeCubit = HomeCubit.get(context);
               return Scrollbar(
                 child: CustomScrollView(clipBehavior: Clip.antiAlias, slivers: [
                   SliverToBoxAdapter(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        // app bar =================,
                         10.hSize,
                         // search text field  =============
                         MainTextField(
@@ -67,13 +49,14 @@ class _HomeViewState extends State<HomeView> {
                         ),
                         12.hSize,
                         HomeBannerPageViewWidget(
-                          imageUrl: imageurl,
-                          pageController: pageController,
-                          title: 'hello mohamed alaa',
+                          bannerList: homeCubit.bannerList,
+                          pageController: homeCubit.pageController,
                         ),
                         10.hSize,
                         DotsIndecator(
-                            currentIndex: currentIndex, dotNumber: 10),
+                          currentIndex: homeCubit.currentIndex,
+                          dotNumber: homeCubit.bannerList.length,
+                        ),
                         10.hSize,
                         HomeCategoryListView(
                           onTap: () {},
@@ -96,7 +79,9 @@ class _HomeViewState extends State<HomeView> {
                       ],
                     ),
                   ),
-                  const ProdectGridVew(),
+                  ProdectGridVew(
+                    product: homeCubit.productList,
+                  ),
                 ]),
               );
             },

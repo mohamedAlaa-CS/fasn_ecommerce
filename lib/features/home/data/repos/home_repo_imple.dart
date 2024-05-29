@@ -13,7 +13,7 @@ class HomeRepoImple implements HomeRepo {
       Map<String, dynamic> response =
           await ApiServices.get(endPoint: EndPoint.home);
 
-      return right(HomeModel.fromJson(response['data']));
+      return right(HomeModel.fromJson(response["data"]));
     } catch (error) {
       if (error is DioException) {
         return left(ServerFailure.fromDiorError(error));

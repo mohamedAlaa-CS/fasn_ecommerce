@@ -1,9 +1,10 @@
+import 'package:fasn_ecommerce/features/home/data/models/home_model/product_model.dart';
 import 'package:fasn_ecommerce/features/home/presentaion/widgets/product_widget.dart';
 import 'package:flutter/material.dart';
 
 class ProdectGridVew extends StatelessWidget {
-  const ProdectGridVew({super.key});
-
+  const ProdectGridVew({super.key, required this.product});
+  final List<ProductModel> product;
   @override
   Widget build(BuildContext context) {
     return SliverGrid.builder(
@@ -11,18 +12,20 @@ class ProdectGridVew extends StatelessWidget {
         crossAxisCount: 2,
         mainAxisSpacing: 10,
         crossAxisSpacing: 10,
-        childAspectRatio: 1 / 1.3,
+        childAspectRatio: 1 / 1.4,
       ),
-      itemBuilder: (context, index) => const ProductWidget(
-        imageUrl:
-            'https://images.unsplash.com/photo-1575936123452-b67c3203c357?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D',
-        price: '10.00',
-        oldPrice: '100.00',
-        title: 'one shouder Top',
-        offer: true,
-        numberOffer: 30,
+      itemBuilder: (context, index) => GestureDetector(
+        onTap: () {},
+        child: ProductWidget(
+          imageUrl: product[index].image ?? '',
+          price: product[index].price ?? 0.0,
+          oldPrice: product[index].oldPrice ?? 0.0,
+          title: product[index].name ?? '',
+          offer: false,
+          numberOffer: 30,
+        ),
       ),
-      itemCount: 15,
+      itemCount: product.length,
     );
   }
 }

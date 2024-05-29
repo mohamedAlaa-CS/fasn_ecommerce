@@ -5,13 +5,14 @@ class ApiServices {
   static var headers = {
     'Content-Type': 'application/json',
     'Accept': 'application/json',
-    'lang': 'ar',
+    'lang': 'en',
   };
   static Future<Map<String, dynamic>> get({
     required String endPoint,
     Map<String, dynamic>? data,
     Map<String, dynamic>? query,
   }) async {
+    getIt.get<Dio>().options.headers = headers;
     Response response = await getIt.get<Dio>().get(
           endPoint,
           data: data,

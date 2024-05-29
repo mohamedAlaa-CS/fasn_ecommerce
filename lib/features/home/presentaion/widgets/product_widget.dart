@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:fasn_ecommerce/core/helper/extensions/assetss_widgets.dart';
 import 'package:fasn_ecommerce/core/utils/app_colors.dart';
 import 'package:fasn_ecommerce/core/utils/app_styles.dart';
@@ -13,7 +14,8 @@ class ProductWidget extends StatelessWidget {
     this.numberOffer,
     this.offer = false,
   });
-  final String imageUrl, title, price, oldPrice;
+  final String imageUrl, title;
+  final double price, oldPrice;
   final bool? offer;
   final double? numberOffer;
   @override
@@ -23,13 +25,12 @@ class ProductWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
         child: Stack(children: [
           AspectRatio(
-            aspectRatio: 1,
-            child: Image.network(
-              imageUrl,
-              fit: BoxFit.cover,
-              width: double.infinity,
-            ),
-          ),
+              aspectRatio: 1,
+              child: CachedNetworkImage(
+                imageUrl: imageUrl,
+                fit: BoxFit.cover,
+                width: double.infinity,
+              )),
           Positioned.directional(
             textDirection: Directionality.of(context),
             end: 10,
@@ -38,7 +39,7 @@ class ProductWidget extends StatelessWidget {
               padding: const EdgeInsetsDirectional.all(8),
               decoration: const BoxDecoration(
                 shape: BoxShape.circle,
-                color: AppColors.white,
+                color: AppColors.ligthColor,
               ),
               child: const Icon(Icons.favorite_outline),
             ),
@@ -67,7 +68,7 @@ class ProductWidget extends StatelessWidget {
       Text(
         title,
         style: AppStyles.style16,
-        maxLines: 1,
+        maxLines: 2,
         overflow: TextOverflow.ellipsis,
       ),
       Row(

@@ -14,3 +14,4 @@ final class HomeFailed extends HomeState {
 
   HomeFailed(this.error);
 }
+final class PageControllerBanner extends HomeState {}
