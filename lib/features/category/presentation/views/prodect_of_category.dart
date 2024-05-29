@@ -4,6 +4,7 @@ import 'package:fasn_ecommerce/core/utils/app_colors.dart';
 import 'package:fasn_ecommerce/core/utils/app_strings.dart';
 import 'package:fasn_ecommerce/core/utils/app_styles.dart';
 import 'package:fasn_ecommerce/core/widgets/app_text_form.dart';
+import 'package:fasn_ecommerce/features/category/presentation/widgets/products_of_category_grid_view.dart';
 import 'package:fasn_ecommerce/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -35,6 +36,7 @@ class ProductsOfCategory extends StatelessWidget {
           fillColor: AppColors.violateColor,
         ),
         12.hSize,
+        const ProductsOfCategoryGrideView()
       ]),
     );
   }
