@@ -17,6 +17,8 @@
     "enter_your_email_address": "ادخل بريدك الالكتروني",
     "confirm_password": "تاكيد كلمة المرور",
     "sign_up": "انشاء حساب",
-    "hello" : "مرحبا"
+    "hello" : "مرحبا",
+    "view_all" : "اظهار الكل",
+    "products" : "المنتجات"
     
 }

@@ -48,8 +48,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "please_login": MessageLookupByLibrary.simpleMessage(
             "Please sign in with your mail"),
+        "products": MessageLookupByLibrary.simpleMessage("Products"),
         "sign_up": MessageLookupByLibrary.simpleMessage("Sign Up"),
         "user_name": MessageLookupByLibrary.simpleMessage("User Name"),
+        "view_all": MessageLookupByLibrary.simpleMessage("View All"),
         "welcome": MessageLookupByLibrary.simpleMessage("Welcome Back To Fasn")
       };
 }

@@ -48,8 +48,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "please_login": MessageLookupByLibrary.simpleMessage(
             "الرجاء تسجيل الدخول باستخدام البريد الخاص بك"),
+        "products": MessageLookupByLibrary.simpleMessage("المنتجات"),
         "sign_up": MessageLookupByLibrary.simpleMessage("انشاء حساب"),
         "user_name": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
+        "view_all": MessageLookupByLibrary.simpleMessage("اظهار الكل"),
         "welcome":
             MessageLookupByLibrary.simpleMessage("مرحبا بكم مرة أخرى في فاسن")
       };
