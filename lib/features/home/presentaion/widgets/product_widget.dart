@@ -13,11 +13,13 @@ class ProductWidget extends StatelessWidget {
     required this.oldPrice,
     this.numberOffer,
     this.offer = false,
+    required this.isFav,
   });
   final String imageUrl, title;
   final double price, oldPrice;
   final bool? offer;
-  final double? numberOffer;
+  final int? numberOffer;
+  final bool isFav;
   @override
   Widget build(BuildContext context) {
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -31,6 +33,8 @@ class ProductWidget extends StatelessWidget {
                 fit: BoxFit.cover,
                 width: double.infinity,
               )),
+
+          //? fav widget ====================
           Positioned.directional(
             textDirection: Directionality.of(context),
             end: 10,
@@ -41,9 +45,16 @@ class ProductWidget extends StatelessWidget {
                 shape: BoxShape.circle,
                 color: AppColors.ligthColor,
               ),
-              child: const Icon(Icons.favorite_outline),
+              child: isFav
+                  ? const Icon(
+                      Icons.favorite,
+                      color: AppColors.redColor,
+                    )
+                  : const Icon(Icons.favorite_outline),
             ),
           ),
+
+          //? offer widget ====================
           if (offer ?? false) ...{
             Positioned.directional(
               textDirection: Directionality.of(context),
