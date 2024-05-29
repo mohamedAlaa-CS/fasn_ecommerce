@@ -3,6 +3,7 @@ import 'package:fasn_ecommerce/core/helper/functions/show_snack_bar.dart';
 import 'package:fasn_ecommerce/core/utils/app_colors.dart';
 import 'package:fasn_ecommerce/core/utils/app_styles.dart';
 import 'package:fasn_ecommerce/core/widgets/app_text_form.dart';
+import 'package:fasn_ecommerce/features/category/presentation/views/category_view.dart';
 import 'package:fasn_ecommerce/features/home/data/repos/home_repo_imple.dart';
 import 'package:fasn_ecommerce/features/home/presentaion/manager/home_cubit/home_cubit.dart';
 import 'package:fasn_ecommerce/features/home/presentaion/widgets/donts_indecator.dart';
@@ -60,7 +61,10 @@ class HomeView extends StatelessWidget {
                         10.hSize,
                         HomeCategoryListView(
                           categoryList: homeCubit.categoriesList,
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.pushNamed(
+                                context, CategoryView.routeName);
+                          },
                         ),
                         10.hSize,
                         Row(children: [

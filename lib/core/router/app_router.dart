@@ -1,5 +1,6 @@
 import 'package:fasn_ecommerce/features/auth/presentation/views/login_view.dart';
 import 'package:fasn_ecommerce/features/auth/presentation/views/signup_view.dart';
+import 'package:fasn_ecommerce/features/category/presentation/views/category_view.dart';
 import 'package:fasn_ecommerce/features/home/presentaion/views/main_view.dart';
 import 'package:fasn_ecommerce/features/splash/presentaion/views/splash_view.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +16,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (context) => const SignupView());
       case MainView.routeName:
         return MaterialPageRoute(builder: (context) => const MainView());
+      case CategoryView.routeName:
+        return MaterialPageRoute(builder: (context) => const CategoryView());
     }
 
     return null;
