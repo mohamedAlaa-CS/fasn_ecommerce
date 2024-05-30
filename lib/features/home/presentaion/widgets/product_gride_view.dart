@@ -7,12 +7,14 @@ class ProdectGridVew extends StatelessWidget {
   final List<ProductModel> product;
   @override
   Widget build(BuildContext context) {
+    bool isPortrait =
+        MediaQuery.of(context).orientation == Orientation.portrait;
     return SliverGrid.builder(
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
         mainAxisSpacing: 10,
         crossAxisSpacing: 10,
-        childAspectRatio: 1 / 1.4,
+        childAspectRatio: isPortrait ? (1 / 1.6) : (1 / 1.3),
       ),
       itemBuilder: (context, index) => GestureDetector(
         onTap: () {},

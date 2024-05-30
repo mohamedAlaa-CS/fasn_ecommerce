@@ -102,6 +102,59 @@ class ProductWidget extends StatelessWidget {
           ),
         ],
       ),
+      7.hSize,
+      Expanded(
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            Container(
+              padding: const EdgeInsetsDirectional.all(5),
+              decoration: BoxDecoration(
+                color: AppColors.ligthColor,
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: const Icon(
+                Icons.add,
+                color: AppColors.black,
+                size: 20,
+              ),
+            ),
+            15.wSize,
+            Text(
+              '1',
+              style: AppStyles.style20,
+            ),
+            15.wSize,
+            Container(
+              padding: const EdgeInsetsDirectional.all(5),
+              decoration: BoxDecoration(
+                color: AppColors.ligthColor,
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: const Icon(
+                Icons.remove,
+                color: AppColors.black,
+                size: 20,
+              ),
+            ),
+            const Spacer(),
+            Container(
+              padding: const EdgeInsetsDirectional.all(5),
+              decoration: BoxDecoration(
+                color: AppColors.blue,
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: const Icon(
+                Icons.add_shopping_cart_outlined,
+                color: AppColors.white,
+                size: 22,
+              ),
+            ),
+            4.wSize,
+          ],
+        ),
+      ),
+      // 7.hSize
     ]);
   }
 }
