@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:fasn_ecommerce/core/helper/extensions/assetss_widgets.dart';
 import 'package:fasn_ecommerce/core/utils/app_colors.dart';
 import 'package:fasn_ecommerce/core/utils/app_styles.dart';
+import 'package:fasn_ecommerce/features/category/presentation/widgets/quntaty_number_of_product.dart';
 import 'package:fasn_ecommerce/features/home/presentaion/views/product_details_view.dart';
 import 'package:flutter/material.dart';
 
@@ -109,54 +110,11 @@ class ProductWidget extends StatelessWidget {
         ),
         7.hSize,
         Expanded(
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              Container(
-                padding: const EdgeInsetsDirectional.all(5),
-                decoration: BoxDecoration(
-                  color: AppColors.ligthColor,
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: const Icon(
-                  Icons.add,
-                  color: AppColors.black,
-                  size: 20,
-                ),
-              ),
-              15.wSize,
-              Text(
-                '1',
-                style: AppStyles.style20,
-              ),
-              15.wSize,
-              Container(
-                padding: const EdgeInsetsDirectional.all(5),
-                decoration: BoxDecoration(
-                  color: AppColors.ligthColor,
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: const Icon(
-                  Icons.remove,
-                  color: AppColors.black,
-                  size: 20,
-                ),
-              ),
-              const Spacer(),
-              Container(
-                padding: const EdgeInsetsDirectional.all(5),
-                decoration: BoxDecoration(
-                  color: AppColors.blue,
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: const Icon(
-                  Icons.add_shopping_cart_outlined,
-                  color: AppColors.white,
-                  size: 22,
-                ),
-              ),
-              4.wSize,
-            ],
+          child: QuntatyNumberofProduct(
+            qtr: 1,
+            addOnTap: () {},
+            removeOnTap: () {},
+            cartOnTap: () {},
           ),
         ),
         // 7.hSize
