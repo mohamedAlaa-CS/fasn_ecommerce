@@ -9,6 +9,8 @@ class ProductsOfCategoryGrideView extends StatelessWidget {
   final int categoryId;
   @override
   Widget build(BuildContext context) {
+    bool isPortrait =
+        MediaQuery.of(context).orientation == Orientation.portrait;
     return BlocProvider(
       create: (context) => CategoryCubit(CategoryRepoImple())
         ..getProductsOfCategory(categoryId: categoryId),
@@ -18,11 +20,11 @@ class ProductsOfCategoryGrideView extends StatelessWidget {
           var categoryCubit = CategoryCubit.get(context);
           return Expanded(
             child: GridView.builder(
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                mainAxisSpacing: 10,
-                crossAxisSpacing: 10,
-                childAspectRatio: 1 / 1.4,
+                mainAxisSpacing: 20,
+                crossAxisSpacing: 20,
+                childAspectRatio: isPortrait ? (1 / 1.55) : (1 / 1.26),
               ),
               itemBuilder: (context, index) {
                 return ProductWidget(
