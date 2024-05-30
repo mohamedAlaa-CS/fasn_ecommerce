@@ -3,6 +3,7 @@ import 'package:fasn_ecommerce/features/auth/presentation/views/signup_view.dart
 import 'package:fasn_ecommerce/features/category/presentation/views/category_view.dart';
 import 'package:fasn_ecommerce/features/category/presentation/views/prodect_of_category.dart';
 import 'package:fasn_ecommerce/features/home/presentaion/views/main_view.dart';
+import 'package:fasn_ecommerce/features/home/presentaion/views/product_details_view.dart';
 import 'package:fasn_ecommerce/features/splash/presentaion/views/splash_view.dart';
 import 'package:flutter/material.dart';
 
@@ -25,10 +26,15 @@ class AppRouter {
           ),
         );
       case ProductsOfCategory.routeName:
-       final categoryId = settings.arguments;
+        final categoryId = settings.arguments;
         return MaterialPageRoute(
-          builder: (context) =>  ProductsOfCategory(categoryId: categoryId,),
+          builder: (context) => ProductsOfCategory(
+            categoryId: categoryId,
+          ),
         );
+      case ProductDetailsView.routeName:
+        return MaterialPageRoute(
+            builder: (context) => const ProductDetailsView());
     }
 
     return null;
