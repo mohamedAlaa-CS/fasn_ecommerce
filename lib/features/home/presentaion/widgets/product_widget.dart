@@ -3,7 +3,7 @@ import 'package:fasn_ecommerce/core/helper/extensions/assetss_widgets.dart';
 import 'package:fasn_ecommerce/core/utils/app_colors.dart';
 import 'package:fasn_ecommerce/core/utils/app_styles.dart';
 import 'package:fasn_ecommerce/features/category/presentation/widgets/quntaty_number_of_product.dart';
-import 'package:fasn_ecommerce/features/home/presentaion/views/product_details_view.dart';
+import 'package:fasn_ecommerce/features/category/presentation/views/product_details_view.dart';
 import 'package:flutter/material.dart';
 
 class ProductWidget extends StatelessWidget {

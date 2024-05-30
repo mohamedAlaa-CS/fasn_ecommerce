@@ -22,5 +22,8 @@
     "products" : "Products",
     "Explore" : "Explore",
     "selesct_quantity" : "Select Quantity",
-    "product_details" : "Product Details"
+    "product_details" : "Product Details",
+    "add_to_cart" : "Add To Cart",
+    "buy_now" : "Buy Now"
+
 }

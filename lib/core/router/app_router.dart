@@ -3,7 +3,7 @@ import 'package:fasn_ecommerce/features/auth/presentation/views/signup_view.dart
 import 'package:fasn_ecommerce/features/category/presentation/views/category_view.dart';
 import 'package:fasn_ecommerce/features/category/presentation/views/prodect_of_category.dart';
 import 'package:fasn_ecommerce/features/home/presentaion/views/main_view.dart';
-import 'package:fasn_ecommerce/features/home/presentaion/views/product_details_view.dart';
+import 'package:fasn_ecommerce/features/category/presentation/views/product_details_view.dart';
 import 'package:fasn_ecommerce/features/splash/presentaion/views/splash_view.dart';
 import 'package:flutter/material.dart';
 
