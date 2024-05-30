@@ -25,8 +25,9 @@ class AppRouter {
           ),
         );
       case ProductsOfCategory.routeName:
+       final categoryId = settings.arguments;
         return MaterialPageRoute(
-          builder: (context) => const ProductsOfCategory(),
+          builder: (context) =>  ProductsOfCategory(categoryId: categoryId,),
         );
     }
 

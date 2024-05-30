@@ -11,8 +11,8 @@ import 'package:flutter_svg/svg.dart';
 
 class ProductsOfCategory extends StatelessWidget {
   static const String routeName = '/products_Of_Category';
-  const ProductsOfCategory({super.key});
-
+  const ProductsOfCategory({super.key, required this.categoryId});
+  final categoryId;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +36,9 @@ class ProductsOfCategory extends StatelessWidget {
           fillColor: AppColors.violateColor,
         ),
         12.hSize,
-        const ProductsOfCategoryGrideView()
+        ProductsOfCategoryGrideView(
+          categoryId: categoryId,
+        )
       ]),
     );
   }

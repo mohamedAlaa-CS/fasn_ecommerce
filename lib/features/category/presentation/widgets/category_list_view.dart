@@ -23,6 +23,7 @@ class CategoryListView extends StatelessWidget {
               Navigator.pushNamed(
                 context,
                 ProductsOfCategory.routeName,
+                arguments: categoryList[index].id,
               );
             },
           );
