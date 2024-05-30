@@ -19,7 +19,7 @@ class HomeCategoryWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
           child: CachedNetworkImage(
             height: isportrait ? context.height / 10 : context.width / 10,
-            width: isportrait ? context.width / 5 : context.height / 5,
+            width: isportrait ? context.width / 5 : context.height / 3,
             imageUrl: imageUrl,
             fit: BoxFit.cover,
           ),

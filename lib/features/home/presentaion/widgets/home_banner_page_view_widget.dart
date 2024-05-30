@@ -20,7 +20,7 @@ class HomeBannerPageViewWidget extends StatelessWidget {
     bool isOrientationPortrait =
         MediaQuery.of(context).orientation == Orientation.portrait;
     return SizedBox(
-      height: isOrientationPortrait ? context.height / 5 : context.width / 4,
+      height: isOrientationPortrait ? context.height / 5 : context.width / 3.5,
       child: PageView.builder(
           controller: pageController,
           itemCount: bannerList.length,
