@@ -2,13 +2,21 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:fasn_ecommerce/core/helper/extensions/assetss_widgets.dart';
 import 'package:fasn_ecommerce/core/utils/app_colors.dart';
 import 'package:fasn_ecommerce/core/utils/app_styles.dart';
+import 'package:fasn_ecommerce/features/home/presentaion/widgets/quntaty_item_deatils_widget.dart';
+import 'package:fasn_ecommerce/features/home/presentaion/widgets/show_all_product_details.dart';
 import 'package:fasn_ecommerce/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
-class ProductDetailsView extends StatelessWidget {
+class ProductDetailsView extends StatefulWidget {
   static const String routeName = 'product_details_view';
   const ProductDetailsView({super.key});
 
+  @override
+  State<ProductDetailsView> createState() => _ProductDetailsViewState();
+}
+
+class _ProductDetailsViewState extends State<ProductDetailsView> {
+  bool isShow = false;
   @override
   Widget build(BuildContext context) {
     bool isportrait =
@@ -103,40 +111,22 @@ class ProductDetailsView extends StatelessWidget {
                     style: AppStyles.style14,
                   ),
                   7.hSize,
-                  Row(
-                    children: [
-                      Container(
-                        padding: const EdgeInsetsDirectional.all(5),
-                        decoration: BoxDecoration(
-                          color: AppColors.ligthColor,
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        child: const Icon(
-                          Icons.add,
-                          color: AppColors.black,
-                          size: 20,
-                        ),
-                      ),
-                      15.wSize,
-                      Text(
-                        '1',
-                        style: AppStyles.style20,
-                      ),
-                      15.wSize,
-                      Container(
-                        padding: const EdgeInsetsDirectional.all(5),
-                        decoration: BoxDecoration(
-                          color: AppColors.ligthColor,
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        child: const Icon(
-                          Icons.remove,
-                          color: AppColors.black,
-                          size: 20,
-                        ),
-                      ),
-                    ],
+                  // ? quantity widget =============================
+                  QuntatyItemDetailsWidget(
+                    addOntap: () {},
+                    removeOntap: () {},
+                    qty: 2,
                   ),
+                  7.hSize,
+                  ShowAllDetailsproduct(
+                    showOntap: () {
+                      setState(() {
+                        isShow = !isShow;
+                      });
+                    },
+                    isShow: isShow,
+                    productDescription: 'Product Description' * 10,
+                  )
                 ],
               ),
             ),

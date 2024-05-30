@@ -21,5 +21,6 @@
     "view_all" : "View All",
     "products" : "Products",
     "Explore" : "Explore",
-    "selesct_quantity" : "Select Quantity"
+    "selesct_quantity" : "Select Quantity",
+    "product_details" : "Product Details"
 }

@@ -279,6 +279,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Product Details`
+  String get product_details {
+    return Intl.message(
+      'Product Details',
+      name: 'product_details',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -49,6 +49,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "please_login": MessageLookupByLibrary.simpleMessage(
             "Please sign in with your mail"),
+        "product_details":
+            MessageLookupByLibrary.simpleMessage("Product Details"),
         "products": MessageLookupByLibrary.simpleMessage("Products"),
         "selesct_quantity":
             MessageLookupByLibrary.simpleMessage("Select Quantity"),
