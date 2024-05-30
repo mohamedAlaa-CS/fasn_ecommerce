@@ -24,7 +24,7 @@ class ProductsOfCategoryGrideView extends StatelessWidget {
                 crossAxisCount: 2,
                 mainAxisSpacing: 20,
                 crossAxisSpacing: 20,
-                childAspectRatio: isPortrait ? (1 / 1.55) : (1 / 1.26),
+                childAspectRatio: isPortrait ? (1 / 1.7) : (1 / 1.26),
               ),
               itemBuilder: (context, index) {
                 return ProductWidget(

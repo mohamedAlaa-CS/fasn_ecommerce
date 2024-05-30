@@ -10,8 +10,8 @@ Future<void> nitInj() async {
 
   Dio dio = Dio();
   dio.options.baseUrl = EndPoint.baseUrl;
-  dio.options.connectTimeout = const Duration(seconds: 3);
-  dio.options.receiveTimeout = const Duration(seconds: 3);
+  dio.options.connectTimeout = const Duration(seconds: 7);
+  dio.options.receiveTimeout = const Duration(seconds: 7);
   dio.options.validateStatus = (i) => true;
   dio.interceptors.add(LogInterceptor(responseBody: true));
 

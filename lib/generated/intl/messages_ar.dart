@@ -50,6 +50,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "please_login": MessageLookupByLibrary.simpleMessage(
             "الرجاء تسجيل الدخول باستخدام البريد الخاص بك"),
         "products": MessageLookupByLibrary.simpleMessage("المنتجات"),
+        "selesct_quantity": MessageLookupByLibrary.simpleMessage("حدد الكمية"),
         "sign_up": MessageLookupByLibrary.simpleMessage("انشاء حساب"),
         "user_name": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
         "view_all": MessageLookupByLibrary.simpleMessage("اظهار الكل"),

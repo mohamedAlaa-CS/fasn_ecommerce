@@ -37,52 +37,60 @@ class CategortItemWidget extends StatelessWidget {
               fit: BoxFit.cover,
               imageUrl: imageUrl,
               // 'https://images.unsplash.com/photo-1575936123452-b67c3203c357?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D',
-              placeholder: (context, url) => const CircularProgressIndicator(),
+              placeholder: (context, url) =>
+                  const Center(child: CircularProgressIndicator()),
               errorWidget: (context, url, error) => const Icon(Icons.error),
             ),
           ),
           15.wSize,
 
           //? details widget ====================
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(
-                title,
-                style: AppStyles.style20,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-              ),
-              10.hSize,
-              //? Explore button =================
-              GestureDetector(
-                onTap: onTap,
-                child: Container(
-                  padding: const EdgeInsetsDirectional.all(8),
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                    color: AppColors.white,
-                    borderRadius: BorderRadius.circular(8),
-                    //shape: BoxShape.rectangle,
-                  ),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  title,
+                  style: AppStyles.style20,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                10.hSize,
+                //? Explore button =================
+                GestureDetector(
+                  onTap: onTap,
                   child: Row(
+                    mainAxisSize: MainAxisSize.min,
                     children: [
-                      Text(
-                        S.of(context).Explore,
-                        style: AppStyles.style12MBlack,
+                      Container(
+                        padding: const EdgeInsetsDirectional.all(8),
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          color: AppColors.white,
+                          borderRadius: BorderRadius.circular(8),
+                          //shape: BoxShape.rectangle,
+                        ),
+                        child: Row(
+                          children: [
+                            Text(
+                              S.of(context).Explore,
+                              style: AppStyles.style12MBlack,
+                            ),
+                            7.wSize,
+                            const Icon(
+                              Icons.arrow_forward_ios,
+                              color: AppColors.black,
+                              size: 12,
+                            ),
+                          ],
+                        ),
                       ),
-                      7.wSize,
-                      const Icon(
-                        Icons.arrow_forward_ios,
-                        color: AppColors.black,
-                        size: 12,
-                      )
                     ],
                   ),
-                ),
-              )
-            ],
+                )
+              ],
+            ),
           )
         ],
       ),

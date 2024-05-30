@@ -269,6 +269,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Select Quantity`
+  String get selesct_quantity {
+    return Intl.message(
+      'Select Quantity',
+      name: 'selesct_quantity',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

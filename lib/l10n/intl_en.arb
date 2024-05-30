@@ -20,5 +20,6 @@
     "hello" : "Hello",
     "view_all" : "View All",
     "products" : "Products",
-    "Explore" : "Explore"
+    "Explore" : "Explore",
+    "selesct_quantity" : "Select Quantity"
 }
