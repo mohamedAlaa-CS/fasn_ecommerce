@@ -12,8 +12,8 @@ import 'package:flutter/material.dart';
 
 class ProductDetailsView extends StatefulWidget {
   static const String routeName = 'product_details_view';
-  const ProductDetailsView({super.key});
-
+  const ProductDetailsView({super.key, required this.product});
+  final product;
   @override
   State<ProductDetailsView> createState() => _ProductDetailsViewState();
 }
@@ -22,6 +22,8 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
   bool isShow = false;
   late PageController pageController;
   int currentIndex = 0;
+
+  _ProductDetailsViewState();
 
   @override
   void initState() {
@@ -48,16 +50,15 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
               children: [
                 SizedBox(
                   height:
-                      isportrait ? context.width / 0.9 : context.width / 0.4,
+                      isportrait ? context.width / 0.9 : context.height / 1.2,
                   child: PageView.builder(
                       controller: pageController,
-                      itemCount: 4,
+                      itemCount: widget.product.images.length,
                       itemBuilder: (context, indaex) {
                         return AspectRatio(
                           aspectRatio: isportrait ? (1 / 0.9) : (1 / 0.4),
                           child: CachedNetworkImage(
-                            imageUrl:
-                                'https://images.unsplash.com/photo-1575936123452-b67c3203c357?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D',
+                            imageUrl: widget.product.images[indaex] ?? '',
                             width: double.infinity,
                             fit: BoxFit.cover,
                           ),
@@ -102,9 +103,11 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  DotsIndecator(currentIndex: currentIndex, dotNumber: 4),
+                  DotsIndecator(
+                      currentIndex: currentIndex,
+                      dotNumber: widget.product.images.length),
                   Text(
-                    'Product Name',
+                    widget.product.name ?? '',
                     style: AppStyles.style20,
                   ),
                   7.hSize,
@@ -117,23 +120,26 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                   Row(
                     children: [
                       Text(
-                        '\$10.00 ',
+                        '\$ ${widget.product.price}',
                         style: AppStyles.style16,
                       ),
                       10.wSize,
                       Text(
-                        ' \$15.00',
+                        ' \$ ${widget.product.oldPrice}',
                         style: AppStyles.style16.copyWith(
                           color: AppColors.borderColor,
                           decoration: TextDecoration.lineThrough,
                         ),
                       ),
                       15.wSize,
-                      Text(
-                        '20% OFF',
-                        style: AppStyles.style16
-                            .copyWith(color: AppColors.redColor),
-                      ),
+                      if (widget.product.discount != null &&
+                          widget.product.discount != 0) ...{
+                        Text(
+                          '${widget.product.discount}% OFF',
+                          style: AppStyles.style16
+                              .copyWith(color: AppColors.redColor),
+                        ),
+                      }
                     ],
                   ),
                   15.hSize,
@@ -157,7 +163,7 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                       });
                     },
                     isShow: isShow,
-                    productDescription: 'Product Description' * 30,
+                    productDescription: widget.product.description ?? '',
                   ),
                   10.hSize,
                 ],

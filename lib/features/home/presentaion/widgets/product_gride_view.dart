@@ -19,13 +19,8 @@ class ProdectGridVew extends StatelessWidget {
       itemBuilder: (context, index) => GestureDetector(
         onTap: () {},
         child: ProductWidget(
-          imageUrl: product[index].image ?? '',
-          price: product[index].price ?? 0.0,
-          oldPrice: product[index].oldPrice ?? 0.0,
-          title: product[index].name ?? '',
-          offer: product[index].discount != 0,
-          numberOffer: product[index].discount,
-          isFav: product[index].inFavorites ?? false,
+   
+          product: product[index],
         ),
       ),
       itemCount: product.length,

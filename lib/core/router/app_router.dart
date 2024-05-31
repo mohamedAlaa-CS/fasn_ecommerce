@@ -33,8 +33,9 @@ class AppRouter {
           ),
         );
       case ProductDetailsView.routeName:
+      final product = settings.arguments;
         return MaterialPageRoute(
-            builder: (context) => const ProductDetailsView());
+            builder: (context) =>  ProductDetailsView( product: product,));
     }
 
     return null;

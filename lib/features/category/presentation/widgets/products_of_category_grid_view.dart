@@ -28,15 +28,8 @@ class ProductsOfCategoryGrideView extends StatelessWidget {
               ),
               itemBuilder: (context, index) {
                 return ProductWidget(
-                  imageUrl: categoryCubit.productsOfCategory[index].image ?? '',
-                  title: categoryCubit.productsOfCategory[index].name ?? '',
-                  price: categoryCubit.productsOfCategory[index].price ?? 0.0,
-                  oldPrice:
-                      categoryCubit.productsOfCategory[index].oldPrice ?? 0.0,
-                  isFav: categoryCubit.productsOfCategory[index].inFavorites ??
-                      false,
-                  offer: categoryCubit.productsOfCategory[index].discount != 0,
-                  numberOffer: categoryCubit.productsOfCategory[index].discount,
+
+                  product: categoryCubit.productsOfCategory[index],
                 );
               },
               itemCount: categoryCubit.productsOfCategory.length,
