@@ -3,7 +3,7 @@ import 'package:dio/dio.dart';
 import 'package:fasn_ecommerce/core/Api/api_services.dart';
 import 'package:fasn_ecommerce/core/Api/end_point.dart';
 import 'package:fasn_ecommerce/core/errors/failuer.dart';
-import 'package:fasn_ecommerce/features/home/data/models/category_model.dart';
+import 'package:fasn_ecommerce/features/category/data/models/category_model.dart';
 import 'package:fasn_ecommerce/features/home/data/models/home_model/home_model.dart';
 import 'package:fasn_ecommerce/features/home/data/repos/home_repo.dart';
 

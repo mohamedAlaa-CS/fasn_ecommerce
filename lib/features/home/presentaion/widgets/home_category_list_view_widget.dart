@@ -1,5 +1,5 @@
 import 'package:fasn_ecommerce/core/helper/extensions/assetss_widgets.dart';
-import 'package:fasn_ecommerce/features/home/data/models/category_model.dart';
+import 'package:fasn_ecommerce/features/category/data/models/category_model.dart';
 import 'package:fasn_ecommerce/features/home/presentaion/widgets/home_category_widget.dart';
 import 'package:flutter/material.dart';
 

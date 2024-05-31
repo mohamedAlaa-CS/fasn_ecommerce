@@ -1,7 +1,7 @@
 import 'package:fasn_ecommerce/core/helper/extensions/assetss_widgets.dart';
 import 'package:fasn_ecommerce/features/category/presentation/views/prodect_of_category.dart';
 import 'package:fasn_ecommerce/features/category/presentation/widgets/category_widget.dart';
-import 'package:fasn_ecommerce/features/home/data/models/category_model.dart';
+import 'package:fasn_ecommerce/features/category/data/models/category_model.dart';
 import 'package:flutter/widgets.dart';
 
 class CategoryListView extends StatelessWidget {

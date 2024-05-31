@@ -1,4 +1,4 @@
-import 'package:fasn_ecommerce/features/home/data/models/category_model.dart';
+import 'package:fasn_ecommerce/features/category/data/models/category_model.dart';
 import 'package:fasn_ecommerce/features/home/data/models/home_model/banner_model.dart';
 import 'package:fasn_ecommerce/features/home/data/models/home_model/product_model.dart';
 import 'package:fasn_ecommerce/features/home/data/repos/home_repo.dart';
