@@ -1,3 +1,4 @@
+import 'package:fasn_ecommerce/core/router/app_router.dart';
 import 'package:fasn_ecommerce/core/utils/local_data.dart';
 import 'package:fasn_ecommerce/core/widgets/main_text.dart';
 import 'package:fasn_ecommerce/features/home/presentaion/views/home_view.dart';
@@ -9,6 +10,8 @@ part 'main_state.dart';
 class MainCubit extends Cubit<MainState> {
   MainCubit() : super(MainInitial());
   static MainCubit get(context) => BlocProvider.of(context);
+  static MainCubit get getFalse =>
+      BlocProvider.of(AppNavigator.context, listen: false);
   int currentIndex = 0;
   List<Widget> screens = [
     const HomeView(),
@@ -30,4 +33,30 @@ class MainCubit extends Cubit<MainState> {
     LocalData.saveString('myLanguage', lang);
     emit(MainChangeLanguageState());
   }
+
+  List<ProductFav> prductsFav = [];
+  addFavProduct(ProductFav prductFav) {
+    try {
+      prductsFav.firstWhere((p) => p.id == prductFav.id).isFav =
+          prductFav.isFav;
+    } catch (e) {
+      prductsFav.add(prductFav);
+    }
+    emit(MainAddToFavState());
+  }
+
+  bool? isProductFav(int? id) {
+    if (id == null) return false;
+    try {
+      return prductsFav.firstWhere((p) => p.id == id).isFav;
+    } catch (e) {
+      return null;
+    }
+  }
+}
+
+class ProductFav {
+  int id;
+  bool isFav;
+  ProductFav({required this.id, required this.isFav});
 }

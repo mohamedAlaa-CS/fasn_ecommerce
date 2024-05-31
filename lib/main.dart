@@ -1,5 +1,8 @@
+import 'dart:developer';
+
 import 'package:fasn_ecommerce/core/di/injections.dart';
 import 'package:fasn_ecommerce/core/router/app_router.dart';
+import 'package:fasn_ecommerce/core/utils/local_data.dart';
 import 'package:fasn_ecommerce/features/home/presentaion/manager/main_cubit/main_cubit.dart';
 import 'package:fasn_ecommerce/features/splash/presentaion/views/splash_view.dart';
 import 'package:fasn_ecommerce/generated/l10n.dart';
@@ -24,6 +27,7 @@ class MyApp extends StatelessWidget {
     return BlocConsumer<MainCubit, MainState>(
       listener: (context, state) {},
       builder: (context, state) {
+        log(LocalData.token.toString());
         return MaterialApp(
           locale: Locale(MainCubit.get(context).currentLanguage),
           localizationsDelegates: const [
@@ -35,6 +39,7 @@ class MyApp extends StatelessWidget {
           supportedLocales: S.delegate.supportedLocales,
           onGenerateRoute: AppRouter.onGenerateRoute,
           initialRoute: SplashView.routeName,
+          navigatorKey: AppNavigator.navigatorKey,
         );
       },
     );

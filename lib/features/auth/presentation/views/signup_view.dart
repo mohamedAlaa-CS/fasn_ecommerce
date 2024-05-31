@@ -33,23 +33,20 @@ class SignupView extends StatelessWidget {
                 listener: (context, state) {
                   if (state is AuthSignupSuccess) {
                     if (state.userModel.status == true) {
-                      showSnackBar(
-                        context,
-                        message: state.userModel.message ?? '',
+                      showSnackbar(
+                        state.userModel.message ?? '',
                       );
 
                       Navigator.of(context).pushNamed(LoginPage.routeName);
                     } else {
-                      showSnackBar(
-                        context,
-                        message: state.userModel.message ?? '',
+                      showSnackbar(
+                        state.userModel.message ?? '',
                         error: true,
                       );
                     }
                   } else if (state is AuthSignupFailed) {
-                    showSnackBar(
-                      context,
-                      message: state.error,
+                    showSnackbar(
+                      state.error,
                       error: true,
                     );
                   }

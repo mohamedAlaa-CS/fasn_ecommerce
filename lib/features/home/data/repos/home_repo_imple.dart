@@ -13,7 +13,7 @@ class HomeRepoImple implements HomeRepo {
     try {
       Map<String, dynamic> response = await ApiServices.get(
         endPoint: EndPoint.home,
-        isAuth: false,
+        isAuth: true,
       );
 
       return right(HomeModel.fromJson(response["data"]));

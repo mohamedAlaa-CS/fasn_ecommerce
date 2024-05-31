@@ -6,4 +6,5 @@ abstract class EndPoint {
   static const String home = "home";
   static const String categories = "categories";
   static const String products = "products";
+  static const String addFavorite = "favorites";
 }

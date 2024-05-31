@@ -35,23 +35,20 @@ class LoginPage extends StatelessWidget {
               listener: (context, state) {
                 if (state is AuthLoginSuccess) {
                   if (state.userModel.status == true) {
-                    showSnackBar(
-                      context,
-                      message: state.userModel.message ?? '',
+                    showSnackbar(
+                      state.userModel.message ?? '',
                     );
                     LocalData.saveToken(state.userModel.data?.token ?? '');
                     Navigator.of(context).pushNamed(MainView.routeName);
                   } else {
-                    showSnackBar(
-                      context,
-                      message: state.userModel.message ?? '',
+                    showSnackbar(
+                      state.userModel.message ?? '',
                       error: true,
                     );
                   }
                 } else if (state is AuthLoginFailed) {
-                  showSnackBar(
-                    context,
-                    message: state.error,
+                  showSnackbar(
+                    state.error,
                     error: true,
                   );
                 }
