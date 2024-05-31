@@ -1,22 +1,31 @@
 import 'package:dio/dio.dart';
 import 'package:fasn_ecommerce/core/di/injections.dart';
+import 'package:fasn_ecommerce/core/utils/local_data.dart';
 
 class ApiServices {
-  static var headers = {
-    'Content-Type': 'application/json',
-    'Accept': 'application/json',
-    'lang': 'en',
-  };
+  static Map<String, dynamic> get headers => {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'lang': 'en',
+      };
+  static Map<String, dynamic> get headersAuth => {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'lang': 'en',
+        'Authorization': LocalData.token ?? ''
+      };
   static Future<Map<String, dynamic>> get({
     required String endPoint,
     Map<String, dynamic>? data,
     Map<String, dynamic>? query,
+    required bool isAuth,
   }) async {
-    getIt.get<Dio>().options.headers = headers;
+    //  getIt.get<Dio>().options.headers = headers.addAll({});
     Response response = await getIt.get<Dio>().get(
           endPoint,
           data: data,
           queryParameters: query,
+          options: Options(headers: isAuth ? headersAuth : headers),
         );
     return response.data;
   }
@@ -25,12 +34,13 @@ class ApiServices {
     required String endPoint,
     Map<String, dynamic>? data,
     Map<String, dynamic>? query,
+    required bool isAuth,
   }) async {
-    getIt.get<Dio>().options.headers = headers;
     Response response = await getIt.get<Dio>().post(
           endPoint,
           data: data,
           queryParameters: query,
+          options: Options(headers: isAuth ? headersAuth : headers),
         );
     return response.data;
   }

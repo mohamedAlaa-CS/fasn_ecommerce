@@ -17,8 +17,11 @@ class AuthRepoImple implements AuthRepo {
       'password': password,
     };
     try {
-      Map<String, dynamic> response =
-          await ApiServices.post(endPoint: EndPoint.login, data: data);
+      Map<String, dynamic> response = await ApiServices.post(
+        endPoint: EndPoint.login,
+        data: data,
+        isAuth: false,
+      );
 
       return Right(Usermodel.fromJson(response));
     } catch (e) {
@@ -43,8 +46,11 @@ class AuthRepoImple implements AuthRepo {
       'phone': phone,
     };
     try {
-      Map<String, dynamic> response =
-          await ApiServices.post(endPoint: EndPoint.signup, data: data);
+      Map<String, dynamic> response = await ApiServices.post(
+        endPoint: EndPoint.signup,
+        data: data,
+        isAuth: false,
+      );
 
       return Right(Usermodel.fromJson(response));
     } catch (e) {

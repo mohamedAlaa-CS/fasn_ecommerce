@@ -11,8 +11,10 @@ class HomeRepoImple implements HomeRepo {
   @override
   Future<Either<Failure, HomeModel>> getHomeData() async {
     try {
-      Map<String, dynamic> response =
-          await ApiServices.get(endPoint: EndPoint.home);
+      Map<String, dynamic> response = await ApiServices.get(
+        endPoint: EndPoint.home,
+        isAuth: false,
+      );
 
       return right(HomeModel.fromJson(response["data"]));
     } catch (error) {
@@ -27,8 +29,10 @@ class HomeRepoImple implements HomeRepo {
   @override
   Future<Either<Failure, List<CategoryModel>>> getCategoresData() async {
     try {
-      Map<String, dynamic> response =
-          await ApiServices.get(endPoint: EndPoint.categories);
+      Map<String, dynamic> response = await ApiServices.get(
+        endPoint: EndPoint.categories,
+        isAuth: false,
+      );
       List<CategoryModel> categories = [];
       for (var item in response["data"]["data"]) {
         categories.add(CategoryModel.fromJson(item));

@@ -14,6 +14,7 @@ class CategoryRepoImple implements CategoryRepo {
       Map<String, dynamic> response = await ApiServices.get(
         endPoint: EndPoint.products,
         query: {'category_id': categoryId},
+        isAuth: false,
       );
       List<ProductModel> productsOfCategoryList = [];
       for (var item in response['data']['data']) {
