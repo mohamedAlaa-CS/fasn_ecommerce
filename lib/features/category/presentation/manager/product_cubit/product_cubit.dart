@@ -2,13 +2,23 @@ import 'package:fasn_ecommerce/core/helper/functions/show_snack_bar.dart';
 import 'package:fasn_ecommerce/features/category/data/repos/product_repo.dart';
 import 'package:fasn_ecommerce/features/home/data/models/home_model/product_model.dart';
 import 'package:fasn_ecommerce/features/home/presentaion/manager/main_cubit/main_cubit.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:meta/meta.dart';
 
 part 'product_state.dart';
 
 class ProductCubit extends Cubit<ProductState> {
-  ProductCubit(this.product, this.productRepo) : super(ProductInitial());
+  ProductCubit(this.product, this.productRepo) : super(ProductInitial()){
+
+    detailsPageController();
+  }
+  detailsPageController() {
+    pageController.addListener(() {
+      currentIndex = pageController.page!.round();
+      emit(DetailsPageState());
+    });
+  }
+
   static ProductCubit get(context) => BlocProvider.of(context);
 
   final ProductModel product;
@@ -35,5 +45,14 @@ class ProductCubit extends Cubit<ProductState> {
       );
     });
     product.inFavorites = product.inFavorites;
+  }
+
+  int currentIndex = 0;
+  bool isShow = false;
+
+  PageController pageController = PageController();
+  void changeShow() {
+    isShow = !isShow;
+    emit(ChangeShowState());
   }
 }

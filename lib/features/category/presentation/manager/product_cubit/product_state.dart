@@ -7,6 +7,10 @@ final class ProductInitial extends ProductState {}
 
 final class ProductAddOrRemoveFavLoading extends ProductState {}
 
+final class ChangeShowState extends ProductState {}
+
+final class DetailsPageState extends ProductState {}
+
 final class ProductAddOrRemoveFavfailed extends ProductState {
   final String errorMessage;
 
