@@ -2,26 +2,26 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:fasn_ecommerce/core/helper/extensions/assetss_widgets.dart';
 import 'package:fasn_ecommerce/core/helper/extensions/context_size.dart';
 import 'package:fasn_ecommerce/core/utils/app_colors.dart';
+import 'package:fasn_ecommerce/core/utils/app_strings.dart';
 import 'package:fasn_ecommerce/core/utils/app_styles.dart';
-import 'package:fasn_ecommerce/features/favourite_page/presentaion/views/widgets/quantity_delete_fav_widget.dart';
+import 'package:fasn_ecommerce/features/category/data/repos/product_repo_imple.dart';
+import 'package:fasn_ecommerce/features/category/presentation/manager/product_cubit/product_cubit.dart';
+import 'package:fasn_ecommerce/features/category/presentation/widgets/quntaty_number_of_product.dart';
+import 'package:fasn_ecommerce/features/home/data/models/home_model/product_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/svg.dart';
 
 class FavProductWidget extends StatelessWidget {
   const FavProductWidget({
     super.key,
-    required this.image,
-    required this.title,
-    required this.price,
-    required this.oldPrice,
     required this.deletOnTap,
-    required this.addOnTap,
-    required this.removeOnTap,
-    required this.qty,
+    required this.product,
   });
-  final String image, title;
-  final double price, oldPrice;
-  final VoidCallback deletOnTap, addOnTap, removeOnTap;
-  final int qty;
+
+  final VoidCallback deletOnTap;
+
+  final ProductModel product;
 
   @override
   Widget build(BuildContext context) {
@@ -35,17 +35,16 @@ class FavProductWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
       ),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           //? image widget ====================
           ClipRRect(
             borderRadius: BorderRadius.circular(12),
             child: CachedNetworkImage(
-              height: isPortrait ? context.height / 7.5 : context.width / 6.5,
+              height: isPortrait ? context.height / 5.8 : context.width / 5.3,
               width: isPortrait ? context.width / 2.5 : context.height / 1.5,
               fit: BoxFit.cover,
-              imageUrl: image,
-              // 'https://images.unsplash.com/photo-1575936123452-b67c3203c357?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D',
+              imageUrl: product.image ?? '',
               placeholder: (context, url) =>
                   const Center(child: CircularProgressIndicator()),
               errorWidget: (context, url, error) => const Icon(Icons.error),
@@ -59,8 +58,19 @@ class FavProductWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
+                Align(
+                  alignment: AlignmentDirectional.bottomEnd,
+                  child: GestureDetector(
+                    onTap: deletOnTap,
+                    child: SvgPicture.asset(
+                      AppStrings.favDeleteIcon,
+                      height: 24,
+                    ),
+                  ),
+                ),
+                5.hSize,
                 Text(
-                  title,
+                  product.name ?? '',
                   style: AppStyles.style20,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
@@ -69,14 +79,14 @@ class FavProductWidget extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      '\$$price',
+                      '\$${product.price}',
                       style: AppStyles.style14,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                     ),
                     12.wSize,
                     Text(
-                      '\$$oldPrice',
+                      '\$${product.oldPrice}',
                       style: AppStyles.style14.copyWith(
                           decoration: TextDecoration.lineThrough,
                           color: AppColors.borderColor),
@@ -88,12 +98,30 @@ class FavProductWidget extends StatelessWidget {
                 SizedBox(
                   height: isPortrait ? context.height / 30 : context.width / 17,
                 ),
-                //? delete and add button widget ====================
-                QuantityAndDeleteFavwidget(
-                  deletOnTap: deletOnTap,
-                  addOnTap: addOnTap,
-                  removeOnTap: removeOnTap,
-                  qty: qty,
+                // //? delete and add button widget ====================
+                BlocProvider(
+                  create: (context) =>
+                      ProductCubit(product, ProductRepoImple()),
+                  child: BlocConsumer<ProductCubit, ProductState>(
+                    listener: (context, state) {},
+                    builder: (context, state) {
+                      var productCubit = ProductCubit.get(context);
+                      return QuntatyNumberofProduct(
+                        qtr: productCubit.qty,
+                        addOnTap: () async {
+                          await productCubit.addItem();
+                        },
+                        removeOnTap: () async {
+                          await productCubit.removeItem();
+                        },
+                        cartOnTap: () async {
+                          await productCubit.addTOCart();
+                        },
+                        looding:
+                            state is ProdectAddToCartLoading ? true : false,
+                      );
+                    },
+                  ),
                 )
               ],
             ),
