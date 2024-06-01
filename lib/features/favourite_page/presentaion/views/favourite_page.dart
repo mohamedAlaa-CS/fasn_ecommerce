@@ -1,8 +1,7 @@
 import 'package:fasn_ecommerce/core/helper/extensions/assetss_widgets.dart';
+import 'package:fasn_ecommerce/features/favourite_page/presentaion/views/widgets/add_to_cart_widget.dart';
 import 'package:fasn_ecommerce/features/favourite_page/presentaion/views/widgets/fav_product_widget.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class FavouritePage extends StatelessWidget {
   const FavouritePage({super.key});
@@ -23,9 +22,16 @@ class FavouritePage extends StatelessWidget {
                   price: 100,
                   oldPrice: 200,
                   deletOnTap: () {},
+                  addOnTap: () {},
+                  removeOnTap: () {},
+                  qty: 1,
                 );
               }),
         ),
+        7.hSize,
+        AddToCartButton(
+          onTap: () {},
+        )
       ],
     );
   }

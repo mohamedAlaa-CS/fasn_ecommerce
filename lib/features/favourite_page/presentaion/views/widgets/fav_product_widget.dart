@@ -2,22 +2,27 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:fasn_ecommerce/core/helper/extensions/assetss_widgets.dart';
 import 'package:fasn_ecommerce/core/helper/extensions/context_size.dart';
 import 'package:fasn_ecommerce/core/utils/app_colors.dart';
-import 'package:fasn_ecommerce/core/utils/app_strings.dart';
 import 'package:fasn_ecommerce/core/utils/app_styles.dart';
+import 'package:fasn_ecommerce/features/favourite_page/presentaion/views/widgets/quantity_delete_fav_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class FavProductWidget extends StatelessWidget {
-  const FavProductWidget(
-      {super.key,
-      required this.image,
-      required this.title,
-      required this.price,
-      required this.oldPrice,
-      required this.deletOnTap});
+  const FavProductWidget({
+    super.key,
+    required this.image,
+    required this.title,
+    required this.price,
+    required this.oldPrice,
+    required this.deletOnTap,
+    required this.addOnTap,
+    required this.removeOnTap,
+    required this.qty,
+  });
   final String image, title;
   final double price, oldPrice;
-  final VoidCallback deletOnTap;
+  final VoidCallback deletOnTap, addOnTap, removeOnTap;
+  final int qty;
+
   @override
   Widget build(BuildContext context) {
     bool isPortrait =
@@ -46,7 +51,7 @@ class FavProductWidget extends StatelessWidget {
               errorWidget: (context, url, error) => const Icon(Icons.error),
             ),
           ),
-          15.wSize,
+          20.wSize,
 
           //? details widget ====================
           Expanded(
@@ -81,17 +86,14 @@ class FavProductWidget extends StatelessWidget {
                   ],
                 ),
                 SizedBox(
-                  height: isPortrait ? context.height / 21 : context.width / 13,
+                  height: isPortrait ? context.height / 30 : context.width / 17,
                 ),
-                Align(
-                  alignment: AlignmentDirectional.bottomEnd,
-                  child: GestureDetector(
-                    onTap: deletOnTap,
-                    child: SvgPicture.asset(
-                      AppStrings.favDeleteIcon,
-                      height: 24,
-                    ),
-                  ),
+                //? delete and add button widget ====================
+                QuantityAndDeleteFavwidget(
+                  deletOnTap: deletOnTap,
+                  addOnTap: addOnTap,
+                  removeOnTap: removeOnTap,
+                  qty: qty,
                 )
               ],
             ),
