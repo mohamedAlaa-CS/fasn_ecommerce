@@ -11,6 +11,10 @@ final class ChangeShowState extends ProductState {}
 
 final class DetailsPageState extends ProductState {}
 
+final class AddItemState extends ProductState {}
+
+final class RemoveItemState extends ProductState {}
+
 final class ProductAddOrRemoveFavfailed extends ProductState {
   final String errorMessage;
 
@@ -22,3 +26,15 @@ final class ProductAddOrRemoveFavSuccess extends ProductState {
 
   ProductAddOrRemoveFavSuccess({required this.message});
 }
+
+final class ProdectAddToCartLoading extends ProductState {}
+
+final class ProdectAddToCartFailed extends ProductState {}
+
+final class ProdectAddToCartSuccess extends ProductState {}
+
+final class ProductAddQuantityLoading extends ProductState {}
+
+final class ProductAddQuantitySuccess extends ProductState {}
+
+final class ProductAddQuantityfailuer extends ProductState {}

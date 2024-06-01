@@ -10,11 +10,13 @@ class QuntatyNumberofProduct extends StatelessWidget {
     required this.addOnTap,
     required this.removeOnTap,
     required this.cartOnTap,
+    required this.looding,
   });
   final int qtr;
   final VoidCallback addOnTap;
   final VoidCallback removeOnTap;
   final VoidCallback cartOnTap;
+  final bool looding;
 
   @override
   Widget build(BuildContext context) {
@@ -60,18 +62,23 @@ class QuntatyNumberofProduct extends StatelessWidget {
         const Spacer(),
         GestureDetector(
           onTap: cartOnTap,
-          child: Container(
-            padding: const EdgeInsetsDirectional.all(5),
-            decoration: BoxDecoration(
-              color: AppColors.blue,
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: const Icon(
-              Icons.add_shopping_cart_outlined,
-              color: AppColors.white,
-              size: 22,
-            ),
-          ),
+          child: looding
+              ? const Center(
+                  child: CircularProgressIndicator(
+                  color: AppColors.blue,
+                ))
+              : Container(
+                  padding: const EdgeInsetsDirectional.all(5),
+                  decoration: BoxDecoration(
+                    color: AppColors.blue,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: const Icon(
+                    Icons.add_shopping_cart_outlined,
+                    color: AppColors.white,
+                    size: 22,
+                  ),
+                ),
         ),
         4.wSize,
       ],

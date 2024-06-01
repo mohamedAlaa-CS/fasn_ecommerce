@@ -16,7 +16,7 @@ class ApiServices {
       };
   static Future<Map<String, dynamic>> get({
     required String endPoint,
-    Map<String, dynamic>? data,
+    Object? data,
     Map<String, dynamic>? query,
     required bool isAuth,
   }) async {
@@ -32,11 +32,26 @@ class ApiServices {
 
   static Future<Map<String, dynamic>> post({
     required String endPoint,
-    Map<String, dynamic>? data,
+    Object? data,
     Map<String, dynamic>? query,
     required bool isAuth,
   }) async {
     Response response = await getIt.get<Dio>().post(
+          endPoint,
+          data: data,
+          queryParameters: query,
+          options: Options(headers: isAuth ? headersAuth : headers),
+        );
+    return response.data;
+  }
+
+  static Future<Map<String, dynamic>> put({
+    required String endPoint,
+    Object? data,
+    Map<String, dynamic>? query,
+    required bool isAuth,
+  }) async {
+    Response response = await getIt.get<Dio>().put(
           endPoint,
           data: data,
           queryParameters: query,

@@ -28,9 +28,7 @@ class ProductDetailsView extends StatelessWidget {
       body: BlocProvider(
         create: (context) => ProductCubit(product, ProductRepoImple()),
         child: BlocConsumer<ProductCubit, ProductState>(
-          listener: (context, state) {
-            // TODO: implement listener
-          },
+          listener: (context, state) {},
           builder: (context, state) {
             var productCubit = ProductCubit.get(context);
             return CustomScrollView(
@@ -159,9 +157,13 @@ class ProductDetailsView extends StatelessWidget {
                         15.hSize,
                         // ? quantity widget =============================
                         QuntatyItemDetailsWidget(
-                          addOntap: () {},
-                          removeOntap: () {},
-                          qty: 2,
+                          addOntap: () {
+                            productCubit.addItem();
+                          },
+                          removeOntap: () {
+                            productCubit.removeItem();
+                          },
+                          qty: productCubit.qty,
                         ),
                         15.hSize,
                         // ? show all details widget =============================
@@ -182,7 +184,10 @@ class ProductDetailsView extends StatelessWidget {
                 SliverFillRemaining(
                   hasScrollBody: false,
                   child: AddCartAndBuyButtom(
-                    cartOntap: () {},
+                    loading: state is ProdectAddToCartLoading ? true : false,
+                    cartOntap: () {
+                      productCubit.addTOCart();
+                    },
                     buyOntap: () {},
                   ),
                 )

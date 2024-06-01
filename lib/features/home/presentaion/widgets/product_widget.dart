@@ -133,10 +133,17 @@ class ProductWidget extends StatelessWidget {
                   7.hSize,
                   Expanded(
                     child: QuntatyNumberofProduct(
-                      qtr: 1,
-                      addOnTap: () {},
-                      removeOnTap: () {},
-                      cartOnTap: () {},
+                      qtr: productCubit.qty,
+                      addOnTap: () {
+                        productCubit.addItem();
+                      },
+                      removeOnTap: () {
+                        productCubit.removeItem();
+                      },
+                      cartOnTap: () {
+                        productCubit.addTOCart();
+                      },
+                      looding: state is ProdectAddToCartLoading ? true : false,
                     ),
                   ),
                   // 7.hSize

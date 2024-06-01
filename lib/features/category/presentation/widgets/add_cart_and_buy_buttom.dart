@@ -7,10 +7,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class AddCartAndBuyButtom extends StatelessWidget {
-  const AddCartAndBuyButtom(
-      {super.key, required this.cartOntap, required this.buyOntap});
+  const AddCartAndBuyButtom({
+    super.key,
+    required this.cartOntap,
+    required this.buyOntap,
+    required this.loading,
+  });
   final VoidCallback cartOntap;
   final VoidCallback buyOntap;
+  final bool loading;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -20,23 +25,28 @@ class AddCartAndBuyButtom extends StatelessWidget {
           padding: const EdgeInsetsDirectional.symmetric(horizontal: 10),
           child: Row(children: [
             Expanded(
-              child: OutlinedButton.icon(
-                style: OutlinedButton.styleFrom(
-                  side: const BorderSide(
-                    color: AppColors.white,
-                    width: 1,
-                  ),
-                ),
-                onPressed: cartOntap,
-                icon: const Icon(
-                  Icons.add_shopping_cart_outlined,
-                  color: AppColors.white,
-                ),
-                label: Text(
-                  S.of(context).add_to_cart,
-                  style: AppStyles.style16,
-                ),
-              ),
+              child: loading
+                  ? const Center(
+                      child: CircularProgressIndicator(
+                      color: AppColors.blue,
+                    ))
+                  : OutlinedButton.icon(
+                      style: OutlinedButton.styleFrom(
+                        side: const BorderSide(
+                          color: AppColors.white,
+                          width: 1,
+                        ),
+                      ),
+                      onPressed: cartOntap,
+                      icon: const Icon(
+                        Icons.add_shopping_cart_outlined,
+                        color: AppColors.white,
+                      ),
+                      label: Text(
+                        S.of(context).add_to_cart,
+                        style: AppStyles.style16,
+                      ),
+                    ),
             ),
             8.wSize,
             Expanded(
