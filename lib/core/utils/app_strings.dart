@@ -16,4 +16,5 @@ class AppStrings {
   static const String notificationIcon = 'assets/images/notifcation_icon.svg';
   static const String buyIcon = 'assets/images/buy_icon.svg';
   static const String deleteIcon = 'assets/images/delet_icon.svg';
+  static const String favDeleteIcon = 'assets/images/fav_delete.svg';
 }

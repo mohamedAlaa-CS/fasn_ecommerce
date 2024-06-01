@@ -80,17 +80,22 @@ class FavProductWidget extends StatelessWidget {
                     ),
                   ],
                 ),
-                const Spacer(),
+                SizedBox(
+                  height: isPortrait ? context.height / 21 : context.width / 13,
+                ),
                 Align(
                   alignment: AlignmentDirectional.bottomEnd,
                   child: GestureDetector(
                     onTap: deletOnTap,
-                    child: SvgPicture.asset(AppStrings.deleteIcon),
+                    child: SvgPicture.asset(
+                      AppStrings.favDeleteIcon,
+                      height: 24,
+                    ),
                   ),
                 )
               ],
             ),
-          )
+          ),
         ],
       ),
     );
