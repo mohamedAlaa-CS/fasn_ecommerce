@@ -24,6 +24,7 @@
     "selesct_quantity" : "Select Quantity",
     "product_details" : "Product Details",
     "add_to_cart" : "Add To Cart",
-    "buy_now" : "Buy Now"
+    "buy_now" : "Buy Now",
+    "search_Now" : "Search Now"
 
 }

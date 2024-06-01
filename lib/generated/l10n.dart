@@ -309,6 +309,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Search Now`
+  String get search_Now {
+    return Intl.message(
+      'Search Now',
+      name: 'search_Now',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -3,6 +3,7 @@ import 'package:fasn_ecommerce/core/utils/local_data.dart';
 import 'package:fasn_ecommerce/core/widgets/main_text.dart';
 import 'package:fasn_ecommerce/features/favourite_page/presentaion/views/favourite_page.dart';
 import 'package:fasn_ecommerce/features/home/presentaion/views/home_view.dart';
+import 'package:fasn_ecommerce/features/search_page/presentation/views/search_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -16,9 +17,9 @@ class MainCubit extends Cubit<MainState> {
   int currentIndex = 0;
   List<Widget> screens = [
     const HomeView(),
-    const Center(child: MainText('Search')),
+    const SearchView(),
     const Center(child: MainText('Cart')),
-    const Center(child: FavouritePage()),
+    const FavouritePage(),
     const Center(child: MainText('person')),
   ];
 
