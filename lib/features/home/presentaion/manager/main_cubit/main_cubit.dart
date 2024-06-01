@@ -1,6 +1,7 @@
 import 'package:fasn_ecommerce/core/router/app_router.dart';
 import 'package:fasn_ecommerce/core/utils/local_data.dart';
 import 'package:fasn_ecommerce/core/widgets/main_text.dart';
+import 'package:fasn_ecommerce/features/favourite_page/presentaion/views/favourite_page.dart';
 import 'package:fasn_ecommerce/features/home/presentaion/views/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -17,7 +18,7 @@ class MainCubit extends Cubit<MainState> {
     const HomeView(),
     const Center(child: MainText('Search')),
     const Center(child: MainText('Cart')),
-    const Center(child: MainText('Love')),
+    const Center(child: FavouritePage()),
     const Center(child: MainText('person')),
   ];
 
