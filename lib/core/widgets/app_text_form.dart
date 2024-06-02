@@ -24,6 +24,8 @@ class MainTextField extends StatelessWidget {
     this.prefixIconOnPressed,
     this.titleColor,
     this.suffixWidget,
+    this.onChanged,
+    this.textStyle,
   });
   final EdgeInsetsGeometry? contentPading;
   final InputBorder? focusedBorder;
@@ -43,6 +45,8 @@ class MainTextField extends StatelessWidget {
   final String? title;
   final IconData? prefixIcon;
   final VoidCallback? prefixIconOnPressed;
+  final Function(String)? onChanged;
+  final TextStyle? textStyle;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -58,7 +62,8 @@ class MainTextField extends StatelessWidget {
         },
         TextFormField(
           textAlignVertical: TextAlignVertical.center,
-          //style: Styles.font16W300.copyWith(color: Colors.black),
+          style: textStyle,
+          onChanged: onChanged,
           validator: validator,
           controller: controller,
           obscureText: isobscure ?? false,
