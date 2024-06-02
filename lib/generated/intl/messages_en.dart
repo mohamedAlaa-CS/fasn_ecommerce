@@ -25,6 +25,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Explore": MessageLookupByLibrary.simpleMessage("Explore"),
         "add_to_cart": MessageLookupByLibrary.simpleMessage("Add To Cart"),
         "buy_now": MessageLookupByLibrary.simpleMessage("Buy Now"),
+        "checkout": MessageLookupByLibrary.simpleMessage("Checkout"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("Confirm Password"),
         "create_account":
@@ -60,6 +61,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "selesct_quantity":
             MessageLookupByLibrary.simpleMessage("Select Quantity"),
         "sign_up": MessageLookupByLibrary.simpleMessage("Sign Up"),
+        "total": MessageLookupByLibrary.simpleMessage("Total"),
         "user_name": MessageLookupByLibrary.simpleMessage("User Name"),
         "view_all": MessageLookupByLibrary.simpleMessage("View All"),
         "welcome": MessageLookupByLibrary.simpleMessage("Welcome Back To Fasn")
