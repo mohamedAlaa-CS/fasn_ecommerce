@@ -25,6 +25,7 @@
     "product_details" : "Product Details",
     "add_to_cart" : "Add To Cart",
     "buy_now" : "Buy Now",
-    "search_Now" : "Search Now"
+    "search_Now" : "Search Now",
+    "not_found_result" : "Not Found Result"
 
 }

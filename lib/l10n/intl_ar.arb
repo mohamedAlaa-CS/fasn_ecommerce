@@ -25,5 +25,6 @@
     "product_details": "تفاصيل المنتج",
     "add_to_cart": "اضافة للسلة",
     "buy_now": "شراء الان",
-    "search_now": "ابحث الان"
+    "search_now": "ابحث الان",
+    "not_found_result": "لم يتم العثور على نتيجة"
 }

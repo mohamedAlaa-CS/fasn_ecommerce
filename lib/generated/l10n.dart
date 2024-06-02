@@ -319,6 +319,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Not Found Result`
+  String get not_found_result {
+    return Intl.message(
+      'Not Found Result',
+      name: 'not_found_result',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

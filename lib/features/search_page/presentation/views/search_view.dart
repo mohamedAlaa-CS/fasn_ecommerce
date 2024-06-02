@@ -44,7 +44,7 @@ class SearchView extends StatelessWidget {
                     : (searchCubit.searcheList.isEmpty || state is SearchStop)
                         ? Center(
                             child: Text(
-                            'no data',
+                            S.of(context).not_found_result,
                             style: AppStyles.style28,
                           ))
                         : GridView.builder(

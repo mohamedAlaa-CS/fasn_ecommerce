@@ -48,6 +48,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "hello": MessageLookupByLibrary.simpleMessage("مرحبا"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "mobile_number": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
+        "not_found_result":
+            MessageLookupByLibrary.simpleMessage("لم يتم العثور على نتيجة"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "please_login": MessageLookupByLibrary.simpleMessage(
             "الرجاء تسجيل الدخول باستخدام البريد الخاص بك"),
