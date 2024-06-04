@@ -28,7 +28,6 @@ class ProductsOfCategoryGrideView extends StatelessWidget {
               ),
               itemBuilder: (context, index) {
                 return ProductWidget(
-
                   product: categoryCubit.productsOfCategory[index],
                 );
               },

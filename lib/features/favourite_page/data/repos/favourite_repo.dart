@@ -4,5 +4,6 @@ import 'package:fasn_ecommerce/features/home/data/models/home_model/product_mode
 
 abstract class FavouriteRepo {
   Future<Either<Failure, List<ProductModel>>> getAllFavouriteData();
-  Future<Either<Failure, String>> removeFavouriteProduct({required int productId});
+  Future<Either<Failure, String>> removeFavouriteProduct(
+      {required int productId});
 }

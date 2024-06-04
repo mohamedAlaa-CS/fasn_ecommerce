@@ -28,7 +28,7 @@ class HomeView extends StatelessWidget {
           child: BlocConsumer<HomeCubit, HomeState>(
             listener: (context, state) {
               if (state is HomeFailed) {
-                showSnackbar( state.error, error: true);
+                showSnackbar(state.error, error: true);
               }
             },
             builder: (context, state) {
