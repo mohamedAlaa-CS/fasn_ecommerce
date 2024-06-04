@@ -49,6 +49,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "hello": MessageLookupByLibrary.simpleMessage("مرحبا"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "mobile_number": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
+        "no_products_in_cart":
+            MessageLookupByLibrary.simpleMessage("لا يوجد منتجات في السلة"),
         "not_found_result":
             MessageLookupByLibrary.simpleMessage("لم يتم العثور على نتيجة"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),

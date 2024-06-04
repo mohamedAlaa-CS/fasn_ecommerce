@@ -9,13 +9,16 @@ import 'package:meta/meta.dart';
 part 'cart_state.dart';
 
 class CartCubit extends Cubit<CartState> {
-  CartCubit(this.cartRepo) : super(CartInitial());
+  CartCubit(this.cartRepo) : super(CartInitial()) {
+    getCart();
+  }
   static CartCubit get(context) => BlocProvider.of(context);
 
   CartModel? cartModel;
 
   final CartRepo cartRepo;
-  getCart() async {
+  Future<void> getCart() async {
+    cartModel = null;
     emit(CartLoading());
     var result = await cartRepo.getCartData();
     result.fold(
@@ -29,8 +32,6 @@ class CartCubit extends Cubit<CartState> {
       (success) {
         emit(CartSuccess());
         cartModel = success;
-
-        log('get cart =========');
       },
     );
   }

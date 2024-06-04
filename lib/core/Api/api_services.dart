@@ -59,4 +59,19 @@ class ApiServices {
         );
     return response.data;
   }
+
+  static Future<Map<String, dynamic>> delete({
+    required String endPoint,
+    Object? data,
+    Map<String, dynamic>? query,
+    required bool isAuth,
+  }) async {
+    Response response = await getIt.get<Dio>().delete(
+          endPoint,
+          data: data,
+          queryParameters: query,
+          options: Options(headers: isAuth ? headersAuth : headers),
+        );
+    return response.data;
+  }
 }

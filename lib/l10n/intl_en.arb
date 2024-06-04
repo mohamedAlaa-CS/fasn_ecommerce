@@ -28,6 +28,7 @@
     "search_Now" : "Search Now",
     "not_found_result" : "Not Found Result",
     "checkout" : "Checkout",
-    "total" : "Total"
+    "total" : "Total",
+    "no_products_in_cart" : "No Products In Cart"
 
 }

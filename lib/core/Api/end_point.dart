@@ -12,4 +12,5 @@ abstract class EndPoint {
   static const String getAllFavourite = "favorites";
   static const String search = "products/search";
   static const String carts = "carts";
+  static const String deleteCartItem = "carts/4";
 }
