@@ -41,4 +41,18 @@ class CartItemProductCubit extends Cubit<CartItemProductState> {
       emit(CartDeleteItemProductSuccess());
     });
   }
+
+  Future<void> updateCartItem() async {
+    emit((CartUpdateQunatatyLoading()));
+    var result = await cartItemRepo.updateCart(
+      cartItemId: cartItem.id ?? 0,
+      quantity: qty,
+    );
+    result.fold((error) {
+      emit(CartUpdateQunatatyFailed());
+      showSnackbar(error.message, error: true);
+    }, (success) {
+      emit(CartUpdateQunatatySuccess());
+    });
+  }
 }

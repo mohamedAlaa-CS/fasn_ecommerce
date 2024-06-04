@@ -89,10 +89,21 @@ class CartProductWidget extends StatelessWidget {
                       height:
                           isPortrait ? context.height / 30 : context.width / 17,
                     ),
+                    //? add and remove qunatay widget ====================
                     AddAndRemoveQuntatyWidget(
                       qty: cartItemCubit.cartItem.quantity ?? 1,
-                      addItem: () {},
-                      removeItem: () {},
+                      addItem: () {
+                        cartItemCubit.addItem();
+                        cartItemCubit.updateCartItem().then((value) {
+                          updateItem();
+                        });
+                      },
+                      removeItem: () {
+                        cartItemCubit.removeItem();
+                        cartItemCubit.updateCartItem().then((value) {
+                          updateItem();
+                        });
+                      },
                       deleteItem: () {
                         cartItemCubit.deleteCartItem().then((value) {
                           updateItem();

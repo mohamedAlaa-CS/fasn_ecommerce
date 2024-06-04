@@ -24,4 +24,22 @@ class CartItemRepoImple implements CartItemRepo {
       }
     }
   }
+
+  @override
+  Future<Either<Failure, String>> updateCart(
+      {required int cartItemId, required int quantity}) async {
+    try {
+      Map<String, dynamic> response = await ApiServices.put(
+          endPoint: EndPoint.updateQuantity.replaceAll('4', '$cartItemId'),
+          data: {"quantity": quantity},
+          isAuth: true);
+      return right(response['message']);
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromDiorError(e));
+      } else {
+        return left(ServerFailure(e.toString()));
+      }
+    }
+  }
 }
