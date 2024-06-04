@@ -18,7 +18,7 @@ class CartProductWidget extends StatelessWidget {
       required this.removeItem,
       required this.deleteItem});
   final String imageUrl, title;
-  final double price, oldPrice;
+  final num price, oldPrice;
   final int qty;
   final VoidCallback addItem, removeItem, deleteItem;
   @override
@@ -78,7 +78,7 @@ class CartProductWidget extends StatelessWidget {
                     ),
                     12.wSize,
                     Text(
-                      '\$$oldPrice,}',
+                      '\$$oldPrice',
                       style: AppStyles.style14.copyWith(
                           decoration: TextDecoration.lineThrough,
                           color: AppColors.borderColor),
