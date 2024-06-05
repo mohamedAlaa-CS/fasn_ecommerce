@@ -17,6 +17,7 @@ BottomNavigationBarItem bootomNAvItem(
         child: SvgPicture.asset(
           image,
           color: select ? AppColors.primaryColor : AppColors.white,
+          height: 20,
         )),
     label: '',
   );

@@ -53,7 +53,7 @@ class MainView extends StatelessWidget {
                     image: AppStrings.loveIcon,
                     select: mainCubit.currentIndex == 3),
                 bootomNAvItem(
-                    image: AppStrings.personIcon,
+                    image: AppStrings.moreIcon,
                     select: mainCubit.currentIndex == 4),
               ]),
         );
