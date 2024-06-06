@@ -46,4 +46,31 @@ class MorePageRepoImple implements MorePageRepo {
       return Left(ServerFailure(e.toString()));
     }
   }
+
+  @override
+  Future<Either<Failure, String>> getComplaintsAndSuggestion({
+    required String name,
+    required String email,
+    required String phone,
+    required String message,
+  }) async {
+    try {
+      Map<String, dynamic> response = await ApiServices.post(
+        endPoint: EndPoint.complaintsAndSuggestions,
+        isAuth: false,
+        data: {
+          'name': name,
+          'phone': phone,
+          'email': email,
+          'message': message,
+        },
+      );
+      return Right(response['message']);
+    } catch (e) {
+      if (e is DioException) {
+        return Left(ServerFailure.fromDiorError(e));
+      }
+      return Left(ServerFailure(e.toString()));
+    }
+  }
 }

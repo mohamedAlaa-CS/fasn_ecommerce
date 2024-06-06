@@ -18,3 +18,9 @@ final class MoreGetAboutUsLoading extends MoreState {}
 final class MoreGetAboutUsSuccess extends MoreState {}
 
 final class MoreGetAboutUsFailed extends MoreState {}
+
+final class MoreGetComplaintAndSuggestionLoading extends MoreState {}
+
+final class MoreGetComplaintAndSuggestionSuccess extends MoreState {}
+
+final class MoreGetComplaintAndSuggestionFailed extends MoreState {}

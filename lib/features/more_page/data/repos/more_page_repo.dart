@@ -6,4 +6,11 @@ import 'package:fasn_ecommerce/features/more_page/data/models/common_question_mo
 abstract class MorePageRepo {
   Future<Either<Failure, List<CommonQuestionModel>>> getCommonQuestionData();
   Future<Either<Failure, AboutUsModel>> getAboutUsData();
+  Future<Either<Failure, String>> getComplaintsAndSuggestion({
+    required String name,
+    required String email,
+    required String phone,
+    required String message,
+
+  });
 }
