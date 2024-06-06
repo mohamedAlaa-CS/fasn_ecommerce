@@ -4,8 +4,8 @@ import 'package:fasn_ecommerce/core/utils/app_styles.dart';
 import 'package:flutter/material.dart';
 
 class QummanQustionPage extends StatefulWidget {
-  const QummanQustionPage({super.key});
-
+  const QummanQustionPage({super.key, this.commonQuestio});
+  final commonQuestio;
   static const String routeName = 'QummanQustionPage';
   @override
   State<QummanQustionPage> createState() => _QummanQustionPageState();
@@ -39,7 +39,7 @@ class _QummanQustionPageState extends State<QummanQustionPage> {
                 //? question text ================
                 Expanded(
                   child: ListView.builder(
-                      itemCount: 10,
+                      itemCount: widget.commonQuestio.length,
                       itemBuilder: (context, i) {
                         return Padding(
                           padding: const EdgeInsets.only(top: 16),
@@ -62,7 +62,7 @@ class _QummanQustionPageState extends State<QummanQustionPage> {
                                     ),
                                     child: ListTile(
                                       title: Text(
-                                        'question ${i + 1}',
+                                        widget.commonQuestio[i].question,
                                         style: AppStyles.style20,
                                       ),
                                       trailing: Icon(
@@ -87,7 +87,7 @@ class _QummanQustionPageState extends State<QummanQustionPage> {
                                     Padding(
                                       padding: const EdgeInsets.all(10.0),
                                       child: Text(
-                                        'answer ${i + 1}',
+                                        widget.commonQuestio[i].answer,
                                         style: AppStyles.style18,
                                       ),
                                     ),

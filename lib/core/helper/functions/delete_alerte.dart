@@ -13,7 +13,7 @@
 //           backgroundColor: AppColors.white,
 //           title:  Center(
 //               child: SvgPicture.asset(AppStrings.deleteIcon, height: 70,)
-              
+
 //             ),
 //           content: Text(message, style: AppStyles.style14,),
 //           actions: <Widget>[

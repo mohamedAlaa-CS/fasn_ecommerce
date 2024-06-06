@@ -43,8 +43,11 @@ class AppRouter {
                 ));
 
       case QummanQustionPage.routeName:
+        final commonQuestion = settings.arguments;
         return MaterialPageRoute(
-            builder: (context) => const QummanQustionPage());
+            builder: (context) => QummanQustionPage(
+                  commonQuestio: commonQuestion,
+                ));
     }
 
     return null;

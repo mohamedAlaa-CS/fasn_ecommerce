@@ -6,3 +6,9 @@ sealed class MoreState {}
 final class MoreInitial extends MoreState {}
 
 final class MoreChangeSettingIsShow extends MoreState {}
+
+final class MoreGetCommonQuestionLoading extends MoreState {}
+
+final class MoreGetCommonQuestionSuccess extends MoreState {}
+
+final class MoreGetCommonQuestionFailed extends MoreState {}
