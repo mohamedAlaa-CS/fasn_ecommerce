@@ -1,7 +1,8 @@
+import 'package:fasn_ecommerce/core/di/injections.dart';
 import 'package:fasn_ecommerce/core/helper/extensions/assetss_widgets.dart';
 import 'package:fasn_ecommerce/features/home/presentaion/manager/main_cubit/main_cubit.dart';
-import 'package:fasn_ecommerce/features/more_page/data/repos/more_page_repo_imple.dart';
 import 'package:fasn_ecommerce/features/more_page/presentation/manager/more_cubit/more_cubit.dart';
+import 'package:fasn_ecommerce/features/more_page/presentation/views/about_us_view.dart';
 import 'package:fasn_ecommerce/features/more_page/presentation/views/common_question_view.dart';
 import 'package:fasn_ecommerce/features/more_page/presentation/widgets/more_widget.dart';
 import 'package:fasn_ecommerce/generated/l10n.dart';
@@ -15,7 +16,7 @@ class MoreView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: BlocProvider(
-        create: (context) => MoreCubit(MorePageRepoImple()),
+        create: (context) => getIt.get<MoreCubit>(),
         child: BlocConsumer<MoreCubit, MoreState>(
           listener: (context, state) {},
           builder: (context, state) {
@@ -54,7 +55,9 @@ class MoreView extends StatelessWidget {
                 ),
                 10.hSize,
                 MoreWidget(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamed(context, AboutUsView.routeName);
+                  },
                   icon: Icons.info,
                   title: S.of(context).about_us,
                 ),

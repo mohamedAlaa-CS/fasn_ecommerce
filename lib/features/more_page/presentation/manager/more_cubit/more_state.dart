@@ -12,3 +12,9 @@ final class MoreGetCommonQuestionLoading extends MoreState {}
 final class MoreGetCommonQuestionSuccess extends MoreState {}
 
 final class MoreGetCommonQuestionFailed extends MoreState {}
+
+final class MoreGetAboutUsLoading extends MoreState {}
+
+final class MoreGetAboutUsSuccess extends MoreState {}
+
+final class MoreGetAboutUsFailed extends MoreState {}

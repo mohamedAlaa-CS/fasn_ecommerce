@@ -1,6 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:fasn_ecommerce/core/Api/end_point.dart';
 import 'package:fasn_ecommerce/features/home/presentaion/manager/main_cubit/main_cubit.dart';
+import 'package:fasn_ecommerce/features/more_page/data/repos/more_page_repo_imple.dart';
+import 'package:fasn_ecommerce/features/more_page/presentation/manager/more_cubit/more_cubit.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -19,4 +21,6 @@ Future<void> nitInj() async {
   getIt.registerSingleton<Dio>(dio);
   MainCubit mainCubit = MainCubit();
   getIt.registerSingleton<MainCubit>(mainCubit);
+  MoreCubit moreCubit = MoreCubit(MorePageRepoImple());
+  getIt.registerSingleton<MoreCubit>(moreCubit);
 }

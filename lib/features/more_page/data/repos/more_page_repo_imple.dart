@@ -3,6 +3,7 @@ import 'package:dio/dio.dart';
 import 'package:fasn_ecommerce/core/Api/api_services.dart';
 import 'package:fasn_ecommerce/core/Api/end_point.dart';
 import 'package:fasn_ecommerce/core/errors/failuer.dart';
+import 'package:fasn_ecommerce/features/more_page/data/models/about_us_model.dart';
 import 'package:fasn_ecommerce/features/more_page/data/models/common_question_model.dart';
 import 'package:fasn_ecommerce/features/more_page/data/repos/more_page_repo.dart';
 
@@ -21,6 +22,23 @@ class MorePageRepoImple implements MorePageRepo {
       }
 
       return Right(commonQuestionList);
+    } catch (e) {
+      if (e is DioException) {
+        return Left(ServerFailure.fromDiorError(e));
+      }
+      return Left(ServerFailure(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, AboutUsModel>> getAboutUsData() async {
+    try {
+      Map<String, dynamic> response = await ApiServices.get(
+        endPoint: EndPoint.aboutUs,
+        isAuth: false,
+      );
+      AboutUsModel aboutUsModel = AboutUsModel.fromJson(response['data']);
+      return Right(aboutUsModel);
     } catch (e) {
       if (e is DioException) {
         return Left(ServerFailure.fromDiorError(e));

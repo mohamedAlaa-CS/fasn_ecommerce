@@ -1,3 +1,4 @@
+import 'package:fasn_ecommerce/features/more_page/data/models/about_us_model.dart';
 import 'package:fasn_ecommerce/features/more_page/data/models/common_question_model.dart';
 import 'package:fasn_ecommerce/features/more_page/data/repos/more_page_repo.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -25,6 +26,18 @@ class MoreCubit extends Cubit<MoreState> {
     }, (success) {
       emit(MoreGetCommonQuestionSuccess());
       commonQuestionList = success;
+    });
+  }
+
+  AboutUsModel? aboutUsModel;
+  getAboutAu() async {
+    emit(MoreGetAboutUsLoading());
+    var result = await morePageRepo.getAboutUsData();
+    result.fold((error) {
+      emit(MoreGetAboutUsFailed());
+    }, (success) {
+      emit(MoreGetAboutUsSuccess());
+      aboutUsModel = success;
     });
   }
 }
