@@ -429,6 +429,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Common Questions`
+  String get common_questions {
+    return Intl.message(
+      'Common Questions',
+      name: 'common_questions',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

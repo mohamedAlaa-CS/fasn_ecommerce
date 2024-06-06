@@ -3,6 +3,7 @@ import 'package:fasn_ecommerce/core/utils/app_colors.dart';
 import 'package:fasn_ecommerce/core/utils/app_styles.dart';
 import 'package:fasn_ecommerce/features/home/presentaion/manager/main_cubit/main_cubit.dart';
 import 'package:fasn_ecommerce/features/more_page/presentation/manager/more_cubit/more_cubit.dart';
+import 'package:fasn_ecommerce/features/more_page/presentation/views/common_question_view.dart';
 import 'package:fasn_ecommerce/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -57,6 +58,15 @@ class MoreView extends StatelessWidget {
                   icon: Icons.info,
                   title: S.of(context).about_us,
                 ),
+                10.hSize,
+                MoreWidget(
+                  icon: Icons.question_mark_rounded,
+                  title: S.of(context).common_questions,
+                  onTap: () {
+                    Navigator.pushNamed(context, QummanQustionPage.routeName);
+                  },
+                ),
+                10.hSize,
                 MoreWidget(
                   onTap: () {},
                   icon: Icons.logout,

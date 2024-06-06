@@ -6,6 +6,7 @@ import 'package:fasn_ecommerce/features/category/presentation/views/category_vie
 import 'package:fasn_ecommerce/features/category/presentation/views/prodect_of_category.dart';
 import 'package:fasn_ecommerce/features/category/presentation/views/product_details_view.dart';
 import 'package:fasn_ecommerce/features/home/presentaion/views/main_view.dart';
+import 'package:fasn_ecommerce/features/more_page/presentation/views/common_question_view.dart';
 import 'package:fasn_ecommerce/features/splash/presentaion/views/splash_view.dart';
 import 'package:flutter/material.dart';
 
@@ -40,6 +41,10 @@ class AppRouter {
             builder: (context) => ProductDetailsView(
                   product: product,
                 ));
+
+      case QummanQustionPage.routeName:
+        return MaterialPageRoute(
+            builder: (context) => const QummanQustionPage());
     }
 
     return null;

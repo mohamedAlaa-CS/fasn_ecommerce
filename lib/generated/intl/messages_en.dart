@@ -27,6 +27,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "add_to_cart": MessageLookupByLibrary.simpleMessage("Add To Cart"),
         "buy_now": MessageLookupByLibrary.simpleMessage("Buy Now"),
         "checkout": MessageLookupByLibrary.simpleMessage("Checkout"),
+        "common_questions":
+            MessageLookupByLibrary.simpleMessage("Common Questions"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("Confirm Password"),
         "contact": MessageLookupByLibrary.simpleMessage("Contact"),
