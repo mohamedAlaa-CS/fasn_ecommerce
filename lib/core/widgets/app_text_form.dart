@@ -25,7 +25,7 @@ class MainTextField extends StatelessWidget {
     this.titleColor,
     this.suffixWidget,
     this.onChanged,
-    this.textStyle,
+    this.textStyle, this.maxLines=1,
   });
   final EdgeInsetsGeometry? contentPading;
   final InputBorder? focusedBorder;
@@ -47,6 +47,7 @@ class MainTextField extends StatelessWidget {
   final VoidCallback? prefixIconOnPressed;
   final Function(String)? onChanged;
   final TextStyle? textStyle;
+  final int ? maxLines;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -69,6 +70,7 @@ class MainTextField extends StatelessWidget {
           obscureText: isobscure ?? false,
           obscuringCharacter: '*',
           keyboardType: textType,
+          maxLines: maxLines,
           decoration: InputDecoration(
             errorStyle: const TextStyle(
               fontSize: 17,

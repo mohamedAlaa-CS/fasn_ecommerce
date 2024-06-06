@@ -439,6 +439,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Complaint And Suggestion`
+  String get complaint_and_suggestion {
+    return Intl.message(
+      'Complaint And Suggestion',
+      name: 'complaint_and_suggestion',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your Suggetion or Complaint`
+  String get suggetion_complaint {
+    return Intl.message(
+      'Your Suggetion or Complaint',
+      name: 'suggetion_complaint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Type Here`
+  String get type_here {
+    return Intl.message(
+      'Type Here',
+      name: 'type_here',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send`
+  String get send {
+    return Intl.message(
+      'Send',
+      name: 'send',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get cancel {
+    return Intl.message(
+      'Cancel',
+      name: 'cancel',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

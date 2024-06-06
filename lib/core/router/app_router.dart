@@ -7,6 +7,7 @@ import 'package:fasn_ecommerce/features/category/presentation/views/prodect_of_c
 import 'package:fasn_ecommerce/features/category/presentation/views/product_details_view.dart';
 import 'package:fasn_ecommerce/features/home/presentaion/views/main_view.dart';
 import 'package:fasn_ecommerce/features/more_page/presentation/views/about_us_view.dart';
+import 'package:fasn_ecommerce/features/more_page/presentation/views/add_fead_back_view.dart';
 import 'package:fasn_ecommerce/features/more_page/presentation/views/common_question_view.dart';
 import 'package:fasn_ecommerce/features/splash/presentaion/views/splash_view.dart';
 import 'package:flutter/material.dart';
@@ -51,6 +52,8 @@ class AppRouter {
                 ));
       case AboutUsView.routeName:
         return MaterialPageRoute(builder: (context) => const AboutUsView());
+      case AddFeadbackView.routeName:
+        return MaterialPageRoute(builder: (context) => const AddFeadbackView());
     }
 
     return null;

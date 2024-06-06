@@ -26,9 +26,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "about_us": MessageLookupByLibrary.simpleMessage("من نحن"),
         "add_to_cart": MessageLookupByLibrary.simpleMessage("اضافة للسلة"),
         "buy_now": MessageLookupByLibrary.simpleMessage("شراء الان"),
+        "cancel": MessageLookupByLibrary.simpleMessage("الغاء"),
         "checkout": MessageLookupByLibrary.simpleMessage("الدفع"),
         "common_questions":
             MessageLookupByLibrary.simpleMessage("الاسئلة الشائعة"),
+        "complaint_and_suggestion":
+            MessageLookupByLibrary.simpleMessage("الشكاوي والاقتراحات"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("تاكيد كلمة المرور"),
         "contact": MessageLookupByLibrary.simpleMessage("اتصل بنا"),
@@ -68,9 +71,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "products": MessageLookupByLibrary.simpleMessage("المنتجات"),
         "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
         "selesct_quantity": MessageLookupByLibrary.simpleMessage("حدد الكمية"),
+        "send": MessageLookupByLibrary.simpleMessage("ارسال"),
         "settings": MessageLookupByLibrary.simpleMessage("الاعدادات"),
         "sign_up": MessageLookupByLibrary.simpleMessage("انشاء حساب"),
+        "suggetion_complaint":
+            MessageLookupByLibrary.simpleMessage("الاقتراحات اوالشكاوي"),
         "total": MessageLookupByLibrary.simpleMessage("المجموع"),
+        "type_here": MessageLookupByLibrary.simpleMessage("اكتب هنا"),
         "user_name": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
         "view_all": MessageLookupByLibrary.simpleMessage("اظهار الكل"),
         "welcome":

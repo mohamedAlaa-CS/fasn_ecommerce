@@ -26,9 +26,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "about_us": MessageLookupByLibrary.simpleMessage("About Us"),
         "add_to_cart": MessageLookupByLibrary.simpleMessage("Add To Cart"),
         "buy_now": MessageLookupByLibrary.simpleMessage("Buy Now"),
+        "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "checkout": MessageLookupByLibrary.simpleMessage("Checkout"),
         "common_questions":
             MessageLookupByLibrary.simpleMessage("Common Questions"),
+        "complaint_and_suggestion":
+            MessageLookupByLibrary.simpleMessage("Complaint And Suggestion"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("Confirm Password"),
         "contact": MessageLookupByLibrary.simpleMessage("Contact"),
@@ -70,9 +73,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "search_Now": MessageLookupByLibrary.simpleMessage("Search Now"),
         "selesct_quantity":
             MessageLookupByLibrary.simpleMessage("Select Quantity"),
+        "send": MessageLookupByLibrary.simpleMessage("Send"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "sign_up": MessageLookupByLibrary.simpleMessage("Sign Up"),
+        "suggetion_complaint":
+            MessageLookupByLibrary.simpleMessage("Your Suggetion or Complaint"),
         "total": MessageLookupByLibrary.simpleMessage("Total"),
+        "type_here": MessageLookupByLibrary.simpleMessage("Type Here"),
         "user_name": MessageLookupByLibrary.simpleMessage("User Name"),
         "view_all": MessageLookupByLibrary.simpleMessage("View All"),
         "welcome": MessageLookupByLibrary.simpleMessage("Welcome Back To Fasn")

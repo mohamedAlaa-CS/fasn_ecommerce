@@ -37,5 +37,10 @@
     "contact": "Contact",
     "profile": "Profile",
     "orders": "Orders",
-    "common_questions": "Common Questions"
+    "common_questions": "Common Questions",
+    "complaint_and_suggestion": "Complaint And Suggestion",
+    "suggetion_complaint" : "Your Suggetion or Complaint",
+    "type_here" : "Type Here",
+    "send" : "Send",
+    "cancel" : "Cancel"
 }
