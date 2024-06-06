@@ -1,5 +1,6 @@
 import 'package:fasn_ecommerce/features/auth/data/models/usermodel/usermodel.dart';
 import 'package:fasn_ecommerce/features/auth/data/repos/auth_repo.dart';
+import 'package:fasn_ecommerce/features/home/presentaion/manager/main_cubit/main_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -33,6 +34,7 @@ class AuthCubit extends Cubit<AuthState> {
     }, (userModel) {
       emit(AuthLoginSuccess(userModel));
       this.userModel = userModel;
+      MainCubit.getFalse.userModel = userModel;
     });
   }
 

@@ -18,4 +18,7 @@ class AppStrings {
   static const String deleteIcon = 'assets/images/delet_icon.svg';
   static const String favDeleteIcon = 'assets/images/fav_delete.svg';
   static const String moreIcon = 'assets/images/more_icon.svg';
+  // local keys
+
+  static const String lan = 'lan';
 }

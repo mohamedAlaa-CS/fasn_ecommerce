@@ -23,16 +23,19 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "Explore": MessageLookupByLibrary.simpleMessage("Explore"),
+        "about_us": MessageLookupByLibrary.simpleMessage("About Us"),
         "add_to_cart": MessageLookupByLibrary.simpleMessage("Add To Cart"),
         "buy_now": MessageLookupByLibrary.simpleMessage("Buy Now"),
         "checkout": MessageLookupByLibrary.simpleMessage("Checkout"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("Confirm Password"),
+        "contact": MessageLookupByLibrary.simpleMessage("Contact"),
         "create_account":
             MessageLookupByLibrary.simpleMessage("Create Account"),
         "dont_have_account":
             MessageLookupByLibrary.simpleMessage("Donot have an account ?"),
         "email_address": MessageLookupByLibrary.simpleMessage("Email Address"),
+        "english": MessageLookupByLibrary.simpleMessage("English"),
         "enter_your_email":
             MessageLookupByLibrary.simpleMessage("Enter your email"),
         "enter_your_email_address":
@@ -48,20 +51,24 @@ class MessageLookup extends MessageLookupByLibrary {
         "full_name": MessageLookupByLibrary.simpleMessage("Full Name"),
         "hello": MessageLookupByLibrary.simpleMessage("Hello"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
+        "logout": MessageLookupByLibrary.simpleMessage("Logout"),
         "mobile_number": MessageLookupByLibrary.simpleMessage("Mobile Number"),
         "no_products_in_cart":
             MessageLookupByLibrary.simpleMessage("No Products In Cart"),
         "not_found_result":
             MessageLookupByLibrary.simpleMessage("Not Found Result"),
+        "orders": MessageLookupByLibrary.simpleMessage("Orders"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "please_login": MessageLookupByLibrary.simpleMessage(
             "Please sign in with your mail"),
         "product_details":
             MessageLookupByLibrary.simpleMessage("Product Details"),
         "products": MessageLookupByLibrary.simpleMessage("Products"),
+        "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "search_Now": MessageLookupByLibrary.simpleMessage("Search Now"),
         "selesct_quantity":
             MessageLookupByLibrary.simpleMessage("Select Quantity"),
+        "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "sign_up": MessageLookupByLibrary.simpleMessage("Sign Up"),
         "total": MessageLookupByLibrary.simpleMessage("Total"),
         "user_name": MessageLookupByLibrary.simpleMessage("User Name"),

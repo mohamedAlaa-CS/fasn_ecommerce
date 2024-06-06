@@ -1,9 +1,11 @@
 import 'package:fasn_ecommerce/core/router/app_router.dart';
+import 'package:fasn_ecommerce/core/utils/app_strings.dart';
 import 'package:fasn_ecommerce/core/utils/local_data.dart';
-import 'package:fasn_ecommerce/core/widgets/main_text.dart';
+import 'package:fasn_ecommerce/features/auth/data/models/usermodel/usermodel.dart';
 import 'package:fasn_ecommerce/features/cart/presentaion/views/cart_view.dart';
 import 'package:fasn_ecommerce/features/favourite_page/presentaion/views/favourite_page.dart';
 import 'package:fasn_ecommerce/features/home/presentaion/views/home_view.dart';
+import 'package:fasn_ecommerce/features/more_page/presentation/views/more_view.dart';
 import 'package:fasn_ecommerce/features/search_page/presentation/views/search_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -21,7 +23,7 @@ class MainCubit extends Cubit<MainState> {
     const SearchView(),
     const CartView(),
     const FavouritePage(),
-    const Center(child: MainText('person')),
+    const MoreView(),
   ];
 
   changeIndex(int index) {
@@ -29,11 +31,14 @@ class MainCubit extends Cubit<MainState> {
     emit(MainChangeIndexState());
   }
 
-  String currentLanguage = 'en';
+  Usermodel? userModel;
 
-  changeLanguage(String lang) {
-    currentLanguage = lang;
-    LocalData.saveString('myLanguage', lang);
+  bool isEnglish = true;
+  changeLanguage() {
+    isEnglish = !isEnglish;
+    // LocalData.remove(AppStrings.lan);
+
+    LocalData.saveBool(AppStrings.lan, isEnglish);
     emit(MainChangeLanguageState());
   }
 

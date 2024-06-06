@@ -23,16 +23,19 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "Explore": MessageLookupByLibrary.simpleMessage("تصفح"),
+        "about_us": MessageLookupByLibrary.simpleMessage("من نحن"),
         "add_to_cart": MessageLookupByLibrary.simpleMessage("اضافة للسلة"),
         "buy_now": MessageLookupByLibrary.simpleMessage("شراء الان"),
         "checkout": MessageLookupByLibrary.simpleMessage("الدفع"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("تاكيد كلمة المرور"),
+        "contact": MessageLookupByLibrary.simpleMessage("اتصل بنا"),
         "create_account": MessageLookupByLibrary.simpleMessage("انشاء حساب"),
         "dont_have_account":
             MessageLookupByLibrary.simpleMessage("ليس لديك حساب ؟"),
         "email_address":
             MessageLookupByLibrary.simpleMessage("البريد الالكتروني"),
+        "english": MessageLookupByLibrary.simpleMessage("الانجليزية"),
         "enter_your_email":
             MessageLookupByLibrary.simpleMessage("ادخل بريدك الالكتروني"),
         "enter_your_email_address":
@@ -48,18 +51,22 @@ class MessageLookup extends MessageLookupByLibrary {
         "full_name": MessageLookupByLibrary.simpleMessage("الاسم بالكامل"),
         "hello": MessageLookupByLibrary.simpleMessage("مرحبا"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+        "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
         "mobile_number": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
         "no_products_in_cart":
             MessageLookupByLibrary.simpleMessage("لا يوجد منتجات في السلة"),
         "not_found_result":
             MessageLookupByLibrary.simpleMessage("لم يتم العثور على نتيجة"),
+        "orders": MessageLookupByLibrary.simpleMessage("الطلبات"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "please_login": MessageLookupByLibrary.simpleMessage(
             "الرجاء تسجيل الدخول باستخدام البريد الخاص بك"),
         "product_details":
             MessageLookupByLibrary.simpleMessage("تفاصيل المنتج"),
         "products": MessageLookupByLibrary.simpleMessage("المنتجات"),
+        "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
         "selesct_quantity": MessageLookupByLibrary.simpleMessage("حدد الكمية"),
+        "settings": MessageLookupByLibrary.simpleMessage("الاعدادات"),
         "sign_up": MessageLookupByLibrary.simpleMessage("انشاء حساب"),
         "total": MessageLookupByLibrary.simpleMessage("المجموع"),
         "user_name": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),

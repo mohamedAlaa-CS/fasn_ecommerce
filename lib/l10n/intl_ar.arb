@@ -29,5 +29,12 @@
     "not_found_result": "لم يتم العثور على نتيجة",
     "checkout": "الدفع",
     "total": "المجموع",
-    "no_products_in_cart": "لا يوجد منتجات في السلة"
+    "no_products_in_cart": "لا يوجد منتجات في السلة",
+    "english": "الانجليزية",
+    "settings": "الاعدادات",
+    "logout": "تسجيل الخروج",
+    "about_us": "من نحن",
+    "contact": "اتصل بنا",
+    "profile": "الملف الشخصي",
+    "orders": "الطلبات"
 }

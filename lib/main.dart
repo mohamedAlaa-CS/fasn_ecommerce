@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
       builder: (context, state) {
         log(LocalData.token.toString());
         return MaterialApp(
-          locale: Locale(MainCubit.get(context).currentLanguage),
+          locale: Locale(MainCubit.get(context).isEnglish ? 'en' : 'ar'),
           localizationsDelegates: const [
             S.delegate,
             GlobalMaterialLocalizations.delegate,
