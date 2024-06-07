@@ -25,6 +25,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Explore": MessageLookupByLibrary.simpleMessage("تصفح"),
         "about_us": MessageLookupByLibrary.simpleMessage("من نحن"),
         "add_to_cart": MessageLookupByLibrary.simpleMessage("اضافة للسلة"),
+        "are_you_sure_you_want_to_logout": MessageLookupByLibrary.simpleMessage(
+            "هل انت متاكد من تسجيل الخروج ؟"),
         "buy_now": MessageLookupByLibrary.simpleMessage("شراء الان"),
         "cancel": MessageLookupByLibrary.simpleMessage("الغاء"),
         "checkout": MessageLookupByLibrary.simpleMessage("الدفع"),
@@ -81,6 +83,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "user_name": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
         "view_all": MessageLookupByLibrary.simpleMessage("اظهار الكل"),
         "welcome":
-            MessageLookupByLibrary.simpleMessage("مرحبا بكم مرة أخرى في فاسن")
+            MessageLookupByLibrary.simpleMessage("مرحبا بكم مرة أخرى في فاسن"),
+        "yes": MessageLookupByLibrary.simpleMessage("نعم")
       };
 }

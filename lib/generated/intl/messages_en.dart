@@ -25,6 +25,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Explore": MessageLookupByLibrary.simpleMessage("Explore"),
         "about_us": MessageLookupByLibrary.simpleMessage("About Us"),
         "add_to_cart": MessageLookupByLibrary.simpleMessage("Add To Cart"),
+        "are_you_sure_you_want_to_logout": MessageLookupByLibrary.simpleMessage(
+            "Are you sure you want to logout?"),
         "buy_now": MessageLookupByLibrary.simpleMessage("Buy Now"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "checkout": MessageLookupByLibrary.simpleMessage("Checkout"),
@@ -82,6 +84,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "type_here": MessageLookupByLibrary.simpleMessage("Type Here"),
         "user_name": MessageLookupByLibrary.simpleMessage("User Name"),
         "view_all": MessageLookupByLibrary.simpleMessage("View All"),
-        "welcome": MessageLookupByLibrary.simpleMessage("Welcome Back To Fasn")
+        "welcome": MessageLookupByLibrary.simpleMessage("Welcome Back To Fasn"),
+        "yes": MessageLookupByLibrary.simpleMessage("Yes")
       };
 }

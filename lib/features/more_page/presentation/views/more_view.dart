@@ -10,6 +10,8 @@ import 'package:fasn_ecommerce/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../core/helper/functions/delete_alerte.dart';
+
 class MoreView extends StatelessWidget {
   const MoreView({super.key});
 
@@ -87,7 +89,16 @@ class MoreView extends StatelessWidget {
                 ),
                 10.hSize,
                 MoreWidget(
-                  onTap: () {},
+                  onTap: () {
+                    ShowDialog(
+                      context,
+                      message: S.of(context).are_you_sure_you_want_to_logout,
+                      yesOntap: () {},
+                      noOntap: () {
+                        Navigator.pop(context);
+                      },
+                    );
+                  },
                   icon: Icons.logout,
                   title: S.of(context).logout,
                 ),

@@ -39,8 +39,10 @@
     "orders": "الطلبات",
     "common_questions": "الاسئلة الشائعة",
     "complaint_and_suggestion": "الشكاوي والاقتراحات",
-    "suggetion_complaint" : "الاقتراحات اوالشكاوي",
-    "type_here" : "اكتب هنا",
-    "send" : "ارسال",
-    "cancel" : "الغاء"
+    "suggetion_complaint": "الاقتراحات اوالشكاوي",
+    "type_here": "اكتب هنا",
+    "send": "ارسال",
+    "cancel": "الغاء",
+    "yes": "نعم",
+    "are_you_sure_you_want_to_logout": "هل انت متاكد من تسجيل الخروج ؟"
 }

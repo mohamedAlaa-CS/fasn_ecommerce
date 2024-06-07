@@ -42,5 +42,7 @@
     "suggetion_complaint" : "Your Suggetion or Complaint",
     "type_here" : "Type Here",
     "send" : "Send",
-    "cancel" : "Cancel"
+    "cancel" : "Cancel",
+    "yes" : "Yes",
+    "are_you_sure_you_want_to_logout" : "Are you sure you want to logout?"
 }

@@ -489,6 +489,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Yes`
+  String get yes {
+    return Intl.message(
+      'Yes',
+      name: 'yes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to logout?`
+  String get are_you_sure_you_want_to_logout {
+    return Intl.message(
+      'Are you sure you want to logout?',
+      name: 'are_you_sure_you_want_to_logout',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
