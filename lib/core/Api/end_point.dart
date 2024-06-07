@@ -16,4 +16,6 @@ abstract class EndPoint {
   static const String commonQuestion = "faqs";
   static const String aboutUs = "settings";
   static const String complaintsAndSuggestions = "complaints";
+  static const String profile = "profile";
+  static const String updateProfile = "update-profile";
 }

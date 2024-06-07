@@ -72,6 +72,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("تفاصيل المنتج"),
         "products": MessageLookupByLibrary.simpleMessage("المنتجات"),
         "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
+        "save": MessageLookupByLibrary.simpleMessage("حفظ"),
         "selesct_quantity": MessageLookupByLibrary.simpleMessage("حدد الكمية"),
         "send": MessageLookupByLibrary.simpleMessage("ارسال"),
         "settings": MessageLookupByLibrary.simpleMessage("الاعدادات"),

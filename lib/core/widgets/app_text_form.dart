@@ -25,7 +25,11 @@ class MainTextField extends StatelessWidget {
     this.titleColor,
     this.suffixWidget,
     this.onChanged,
-    this.textStyle, this.maxLines=1,
+    this.textStyle,
+    this.maxLines = 1,
+    this.readOnly = false,
+    this.intialValue,
+    this.cursorColor,
   });
   final EdgeInsetsGeometry? contentPading;
   final InputBorder? focusedBorder;
@@ -47,7 +51,10 @@ class MainTextField extends StatelessWidget {
   final VoidCallback? prefixIconOnPressed;
   final Function(String)? onChanged;
   final TextStyle? textStyle;
-  final int ? maxLines;
+  final int? maxLines;
+  final bool? readOnly;
+  final String? intialValue;
+  final Color? cursorColor;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -62,8 +69,11 @@ class MainTextField extends StatelessWidget {
           18.hSize,
         },
         TextFormField(
+          cursorColor: cursorColor ?? AppColors.white,
           textAlignVertical: TextAlignVertical.center,
           style: textStyle,
+          readOnly: readOnly ?? false,
+          initialValue: intialValue,
           onChanged: onChanged,
           validator: validator,
           controller: controller,

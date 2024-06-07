@@ -9,6 +9,7 @@ import 'package:fasn_ecommerce/features/home/presentaion/views/main_view.dart';
 import 'package:fasn_ecommerce/features/more_page/presentation/views/about_us_view.dart';
 import 'package:fasn_ecommerce/features/more_page/presentation/views/add_fead_back_view.dart';
 import 'package:fasn_ecommerce/features/more_page/presentation/views/common_question_view.dart';
+import 'package:fasn_ecommerce/features/more_page/presentation/views/profile_view.dart';
 import 'package:fasn_ecommerce/features/splash/presentaion/views/splash_view.dart';
 import 'package:flutter/material.dart';
 
@@ -54,6 +55,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (context) => const AboutUsView());
       case AddFeadbackView.routeName:
         return MaterialPageRoute(builder: (context) => const AddFeadbackView());
+      case ProfileView.routeName:
+        return MaterialPageRoute(builder: (context) => const ProfileView());
     }
 
     return null;

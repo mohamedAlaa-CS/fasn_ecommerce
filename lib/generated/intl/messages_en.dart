@@ -72,6 +72,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Product Details"),
         "products": MessageLookupByLibrary.simpleMessage("Products"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+        "save": MessageLookupByLibrary.simpleMessage("Save"),
         "search_Now": MessageLookupByLibrary.simpleMessage("Search Now"),
         "selesct_quantity":
             MessageLookupByLibrary.simpleMessage("Select Quantity"),

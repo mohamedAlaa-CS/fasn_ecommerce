@@ -5,6 +5,7 @@ import 'package:fasn_ecommerce/features/more_page/presentation/manager/more_cubi
 import 'package:fasn_ecommerce/features/more_page/presentation/views/about_us_view.dart';
 import 'package:fasn_ecommerce/features/more_page/presentation/views/add_fead_back_view.dart';
 import 'package:fasn_ecommerce/features/more_page/presentation/views/common_question_view.dart';
+import 'package:fasn_ecommerce/features/more_page/presentation/views/profile_view.dart';
 import 'package:fasn_ecommerce/features/more_page/presentation/widgets/more_widget.dart';
 import 'package:fasn_ecommerce/generated/l10n.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +28,12 @@ class MoreView extends StatelessWidget {
             return Column(
               children: [
                 MoreWidget(
-                  onTap: () {},
+                  onTap: () {
+                    // if (MainCubit.getFalse.userModel != null) {
+                    //   Navigator.pushNamed(context, ProfileView.routeName);
+                    // }
+                    Navigator.pushNamed(context, ProfileView.routeName);
+                  },
                   isMain: true,
                   icon: Icons.person,
                   title: MainCubit.getFalse.userModel?.data?.name ??
