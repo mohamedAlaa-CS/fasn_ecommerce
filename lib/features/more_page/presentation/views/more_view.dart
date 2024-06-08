@@ -5,6 +5,7 @@ import 'package:fasn_ecommerce/features/more_page/presentation/manager/more_cubi
 import 'package:fasn_ecommerce/features/more_page/presentation/views/about_us_view.dart';
 import 'package:fasn_ecommerce/features/more_page/presentation/views/add_fead_back_view.dart';
 import 'package:fasn_ecommerce/features/more_page/presentation/views/common_question_view.dart';
+import 'package:fasn_ecommerce/features/more_page/presentation/views/my_order_view.dart';
 import 'package:fasn_ecommerce/features/more_page/presentation/views/profile_view.dart';
 import 'package:fasn_ecommerce/features/more_page/presentation/widgets/more_widget.dart';
 import 'package:fasn_ecommerce/generated/l10n.dart';
@@ -49,7 +50,9 @@ class MoreView extends StatelessWidget {
                 //? Orders button ================
                 10.hSize,
                 MoreWidget(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamed(context, MyOrderView.routeName);
+                  },
                   icon: Icons.history,
                   title: "Orders",
                 ),

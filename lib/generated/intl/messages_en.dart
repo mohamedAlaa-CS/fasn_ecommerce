@@ -68,7 +68,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Not Found Result"),
         "online_payment":
             MessageLookupByLibrary.simpleMessage("Online Payment"),
+        "order_code": MessageLookupByLibrary.simpleMessage("Order Code"),
         "orders": MessageLookupByLibrary.simpleMessage("Orders"),
+        "oreder_date": MessageLookupByLibrary.simpleMessage("Order Date"),
+        "oreder_details": MessageLookupByLibrary.simpleMessage("Order details"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "please_login": MessageLookupByLibrary.simpleMessage(
             "Please sign in with your mail"),

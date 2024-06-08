@@ -549,6 +549,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Order Date`
+  String get oreder_date {
+    return Intl.message(
+      'Order Date',
+      name: 'oreder_date',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order Code`
+  String get order_code {
+    return Intl.message(
+      'Order Code',
+      name: 'order_code',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order details`
+  String get oreder_details {
+    return Intl.message(
+      'Order details',
+      name: 'oreder_details',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

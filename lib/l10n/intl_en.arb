@@ -48,5 +48,9 @@
     "save": "Save",
     "please_select_payment_method": "Please Select Payment Method",
     "cash_on_delivery": "Cash On Delivery",
-    "online_payment": "Online Payment"
+    "online_payment": "Online Payment",
+    "oreder_date": "Order Date",
+    "order_code": "Order Code",
+    "oreder_details": "Order details"
+   
 }

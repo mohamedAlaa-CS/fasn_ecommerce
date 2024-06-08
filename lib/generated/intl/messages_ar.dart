@@ -67,7 +67,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "not_found_result":
             MessageLookupByLibrary.simpleMessage("لم يتم العثور على نتيجة"),
         "online_payment": MessageLookupByLibrary.simpleMessage(" دفع اونلاين"),
+        "order_code": MessageLookupByLibrary.simpleMessage("كود الطلب"),
         "orders": MessageLookupByLibrary.simpleMessage("الطلبات"),
+        "oreder_date": MessageLookupByLibrary.simpleMessage("تاريخ الطلب"),
+        "oreder_details": MessageLookupByLibrary.simpleMessage("تفاصيل الطلب"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "please_login": MessageLookupByLibrary.simpleMessage(
             "الرجاء تسجيل الدخول باستخدام البريد الخاص بك"),
