@@ -29,6 +29,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "هل انت متاكد من تسجيل الخروج ؟"),
         "buy_now": MessageLookupByLibrary.simpleMessage("شراء الان"),
         "cancel": MessageLookupByLibrary.simpleMessage("الغاء"),
+        "cash_on_delivery":
+            MessageLookupByLibrary.simpleMessage("الدفع عند الاستلام"),
         "checkout": MessageLookupByLibrary.simpleMessage("الدفع"),
         "common_questions":
             MessageLookupByLibrary.simpleMessage("الاسئلة الشائعة"),
@@ -64,10 +66,13 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("لا يوجد منتجات في السلة"),
         "not_found_result":
             MessageLookupByLibrary.simpleMessage("لم يتم العثور على نتيجة"),
+        "online_payment": MessageLookupByLibrary.simpleMessage(" دفع اونلاين"),
         "orders": MessageLookupByLibrary.simpleMessage("الطلبات"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "please_login": MessageLookupByLibrary.simpleMessage(
             "الرجاء تسجيل الدخول باستخدام البريد الخاص بك"),
+        "please_select_payment_method":
+            MessageLookupByLibrary.simpleMessage("الرجاء تحديد طريقة الدفع"),
         "product_details":
             MessageLookupByLibrary.simpleMessage("تفاصيل المنتج"),
         "products": MessageLookupByLibrary.simpleMessage("المنتجات"),

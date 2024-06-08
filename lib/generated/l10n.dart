@@ -519,6 +519,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Please Select Payment Method`
+  String get please_select_payment_method {
+    return Intl.message(
+      'Please Select Payment Method',
+      name: 'please_select_payment_method',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cash On Delivery`
+  String get cash_on_delivery {
+    return Intl.message(
+      'Cash On Delivery',
+      name: 'cash_on_delivery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Online Payment`
+  String get online_payment {
+    return Intl.message(
+      'Online Payment',
+      name: 'online_payment',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

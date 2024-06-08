@@ -14,3 +14,9 @@ final class CartFailed extends CartState {
 
   CartFailed({required this.message});
 }
+
+final class AddOrderLoading extends CartState {}
+
+final class AddOrderSuccess extends CartState {}
+
+final class AddOrderFailed extends CartState {}

@@ -18,4 +18,5 @@ abstract class EndPoint {
   static const String complaintsAndSuggestions = "complaints";
   static const String profile = "profile";
   static const String updateProfile = "update-profile";
+  static const String orders = "orders";
 }

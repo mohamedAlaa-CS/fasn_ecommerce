@@ -39,11 +39,14 @@
     "orders": "Orders",
     "common_questions": "Common Questions",
     "complaint_and_suggestion": "Complaint And Suggestion",
-    "suggetion_complaint" : "Your Suggetion or Complaint",
-    "type_here" : "Type Here",
-    "send" : "Send",
-    "cancel" : "Cancel",
-    "yes" : "Yes",
-    "are_you_sure_you_want_to_logout" : "Are you sure you want to logout?",
-    "save" : "Save"
+    "suggetion_complaint": "Your Suggetion or Complaint",
+    "type_here": "Type Here",
+    "send": "Send",
+    "cancel": "Cancel",
+    "yes": "Yes",
+    "are_you_sure_you_want_to_logout": "Are you sure you want to logout?",
+    "save": "Save",
+    "please_select_payment_method": "Please Select Payment Method",
+    "cash_on_delivery": "Cash On Delivery",
+    "online_payment": "Online Payment"
 }

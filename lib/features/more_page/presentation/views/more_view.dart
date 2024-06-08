@@ -27,10 +27,10 @@ class MoreView extends StatelessWidget {
             var moreCubit = MoreCubit.get(context);
             return Column(
               children: [
+                //? profile button ================
                 BlocConsumer<MainCubit, MainState>(
                   listener: (context, state) {},
                   builder: (context, state) {
-                    
                     return MoreWidget(
                       onTap: () {
                         // if (MainCubit.getFalse.userModel != null) {
@@ -45,18 +45,16 @@ class MoreView extends StatelessWidget {
                     );
                   },
                 ),
+
+                //? Orders button ================
                 10.hSize,
                 MoreWidget(
                   onTap: () {},
                   icon: Icons.history,
                   title: "Orders",
                 ),
-                10.hSize,
-                MoreWidget(
-                  onTap: () {},
-                  icon: Icons.location_on,
-                  title: S.of(context).profile,
-                ),
+
+                //? settings button ================
                 10.hSize,
                 MoreWidget(
                   settingsIsShow: moreCubit.settingIsShow,
@@ -68,6 +66,8 @@ class MoreView extends StatelessWidget {
                   icon: Icons.settings,
                   title: S.of(context).settings,
                 ),
+
+                //? About us button ================
                 10.hSize,
                 MoreWidget(
                   onTap: () {
@@ -76,6 +76,7 @@ class MoreView extends StatelessWidget {
                   icon: Icons.info,
                   title: S.of(context).about_us,
                 ),
+                //? complaint and suggestion button ================
                 10.hSize,
                 MoreWidget(
                   icon: Icons.chat,
@@ -84,6 +85,7 @@ class MoreView extends StatelessWidget {
                     Navigator.pushNamed(context, AddFeadbackView.routeName);
                   },
                 ),
+                //? common question button ================
                 10.hSize,
                 MoreWidget(
                   icon: Icons.question_mark_rounded,
@@ -99,6 +101,8 @@ class MoreView extends StatelessWidget {
                     });
                   },
                 ),
+
+                //? logout button ================
                 10.hSize,
                 MoreWidget(
                   onTap: () {

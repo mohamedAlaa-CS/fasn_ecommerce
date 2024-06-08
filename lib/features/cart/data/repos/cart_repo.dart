@@ -4,4 +4,10 @@ import 'package:fasn_ecommerce/features/cart/data/models/cart_model/cart_model.d
 
 abstract class CartRepo {
   Future<Either<Failure, CartModel>> getCartData();
+
+  Future<Either<Failure, String>> addOrder({
+    required int addressId,
+    required int paymentMethod,
+    required bool usePoints,
+  });
 }

@@ -29,6 +29,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Are you sure you want to logout?"),
         "buy_now": MessageLookupByLibrary.simpleMessage("Buy Now"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+        "cash_on_delivery":
+            MessageLookupByLibrary.simpleMessage("Cash On Delivery"),
         "checkout": MessageLookupByLibrary.simpleMessage("Checkout"),
         "common_questions":
             MessageLookupByLibrary.simpleMessage("Common Questions"),
@@ -64,10 +66,14 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("No Products In Cart"),
         "not_found_result":
             MessageLookupByLibrary.simpleMessage("Not Found Result"),
+        "online_payment":
+            MessageLookupByLibrary.simpleMessage("Online Payment"),
         "orders": MessageLookupByLibrary.simpleMessage("Orders"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "please_login": MessageLookupByLibrary.simpleMessage(
             "Please sign in with your mail"),
+        "please_select_payment_method": MessageLookupByLibrary.simpleMessage(
+            "Please Select Payment Method"),
         "product_details":
             MessageLookupByLibrary.simpleMessage("Product Details"),
         "products": MessageLookupByLibrary.simpleMessage("Products"),

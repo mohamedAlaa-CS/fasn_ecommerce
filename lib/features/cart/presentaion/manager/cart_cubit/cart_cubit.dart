@@ -35,4 +35,31 @@ class CartCubit extends Cubit<CartState> {
       },
     );
   }
+
+//? add order to cart ===========
+
+  Future<void> addOrder({
+    required int addressId,
+    required int paymentMethod,
+    required bool usePoints,
+  }) async {
+    emit(AddOrderLoading());
+    var result = await cartRepo.addOrder(
+      addressId: addressId,
+      paymentMethod: paymentMethod,
+      usePoints: usePoints,
+    );
+    result.fold(
+      (l) {
+        emit(AddOrderFailed());
+
+        showSnackbar(l.message, error: true);
+      },
+      (success) {
+        emit(AddOrderSuccess());
+        getCart();
+        showSnackbar(success);
+      },
+    );
+  }
 }

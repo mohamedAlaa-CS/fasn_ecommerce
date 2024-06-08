@@ -23,4 +23,31 @@ class CartRepoImple implements CartRepo {
       }
     }
   }
+
+  @override
+  Future<Either<Failure, String>> addOrder({
+    required int addressId,
+    required int paymentMethod,
+    required bool usePoints,
+  }) async {
+    try {
+      Map<String, dynamic> response = await ApiServices.post(
+        endPoint: EndPoint.orders,
+        data: {
+          "address_id": addressId,
+          "payment_method": paymentMethod,
+          "use_points": usePoints
+        },
+        isAuth: true,
+      );
+
+      return right(response['message']);
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromDiorError(e));
+      } else {
+        return left(ServerFailure(e.toString()));
+      }
+    }
+  }
 }

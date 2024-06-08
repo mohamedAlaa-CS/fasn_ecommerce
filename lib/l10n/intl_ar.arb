@@ -45,5 +45,8 @@
     "cancel": "الغاء",
     "yes": "نعم",
     "are_you_sure_you_want_to_logout": "هل انت متاكد من تسجيل الخروج ؟",
-    "save": "حفظ"
+    "save": "حفظ",
+    "please_select_payment_method": "الرجاء تحديد طريقة الدفع",
+    "cash_on_delivery": "الدفع عند الاستلام",
+    "online_payment": " دفع اونلاين"
 }
