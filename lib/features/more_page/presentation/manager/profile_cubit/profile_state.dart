@@ -12,3 +12,11 @@ final class GetProfileLoading extends ProfileState {}
 final class GetProfileSuccess extends ProfileState {}
 
 final class GetProfileFailed extends ProfileState {}
+
+final class UpdateProfileLoading extends ProfileState {}
+
+final class UpdateProfileSuccess extends ProfileState {}
+
+final class UpdateProfileFailed extends ProfileState {}
+
+final class SetImageSuccess extends ProfileState {}

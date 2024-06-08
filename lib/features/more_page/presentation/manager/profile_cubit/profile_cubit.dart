@@ -1,6 +1,8 @@
-import 'dart:developer';
+import 'dart:io';
 
+import 'package:fasn_ecommerce/core/helper/functions/set_image.dart';
 import 'package:fasn_ecommerce/features/auth/data/models/usermodel/usermodel.dart';
+import 'package:fasn_ecommerce/features/home/presentaion/manager/main_cubit/main_cubit.dart';
 import 'package:fasn_ecommerce/features/more_page/data/repos/profile_repo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -27,6 +29,7 @@ class ProfileCubit extends Cubit<ProfileState> {
     emit(ChangeIsUpdated());
   }
 
+//! get profile from api ===================
   Usermodel? usermodel;
   Future<void> getProfile() async {
     emit(GetProfileLoading());
@@ -35,7 +38,8 @@ class ProfileCubit extends Cubit<ProfileState> {
       emit(GetProfileFailed());
     }, (success) {
       usermodel = success;
-      log(usermodel.toString());
+      MainCubit.getFalse.userModel = success;
+
       nameController.text = success.data!.name!;
       phoneController.text = success.data!.phone!;
       emailController.text = success.data!.email!;
@@ -43,5 +47,32 @@ class ProfileCubit extends Cubit<ProfileState> {
     });
   }
 
-  void updateProfile() {}
+//! update profile ===================
+  File? avatar;
+  setImage(BuildContext context) async {
+    avatar = await pickImage(context);
+    emit(SetImageSuccess());
+  }
+
+  Future<void> updateProfile() async {
+    emit(UpdateProfileLoading());
+
+    var result = await profileRepo.updateProfile(
+      name: nameController.text,
+      phone: phoneController.text,
+      email: emailController.text,
+      password: passwordController.text,
+      // image: MultipartFile.fromFile(
+      //   avatar!.path,
+      //   filename: avatar?.path.split('/').last,
+      // ),
+    );
+    result.fold((l) {
+      emit(UpdateProfileFailed());
+    }, (success) {
+      emit(UpdateProfileSuccess());
+      getProfile();
+      changeIsUpdated();
+    });
+  }
 }

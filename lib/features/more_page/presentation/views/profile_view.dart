@@ -61,20 +61,44 @@ class ProfileView extends StatelessWidget {
                           // ? profile image ================
                           Row(
                             children: [
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(50),
-                                child: CachedNetworkImage(
-                                  height: 100,
-                                  width: 100,
-                                  fit: BoxFit.cover,
-                                  imageUrl:
-                                      profileCubit.usermodel?.data?.image ?? '',
-                                  //  'https://images.unsplash.com/photo-1575936123452-b67c3203c357?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D',
-                                  placeholder: (context, url) => const Center(
-                                      child: CircularProgressIndicator()),
-                                  errorWidget: (context, url, error) =>
-                                      const Icon(Icons.error),
-                                ),
+                              Stack(
+                                alignment: Alignment.bottomRight,
+                                children: [
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.circular(50),
+                                    child: CachedNetworkImage(
+                                      height: 100,
+                                      width: 100,
+                                      fit: BoxFit.cover,
+                                      imageUrl:
+                                          profileCubit.usermodel?.data?.image ??
+                                              '',
+                                      //  'https://images.unsplash.com/photo-1575936123452-b67c3203c357?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D',
+                                      placeholder: (context, url) =>
+                                          const Center(
+                                              child:
+                                                  CircularProgressIndicator()),
+                                      errorWidget: (context, url, error) =>
+                                          const Icon(Icons.error),
+                                    ),
+                                  ),
+                                  GestureDetector(
+                                    onTap: () async {
+                                      await profileCubit.setImage(context);
+                                    },
+                                    child: Container(
+                                        padding: const EdgeInsets.all(5),
+                                        decoration: const BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          color: AppColors.white,
+                                        ),
+                                        child: const Icon(
+                                          Icons.camera_alt_rounded,
+                                          size: 20,
+                                          color: AppColors.blue,
+                                        )),
+                                  ),
+                                ],
                               ),
                               20.wSize,
                               Expanded(
@@ -156,6 +180,7 @@ class ProfileView extends StatelessWidget {
                             },
                           ),
                           10.hSize,
+                          //? edit section ====================
                           if (profileCubit.isUpdated) ...{
                             MainTextField(
                               controller: profileCubit.passwordController,
@@ -167,11 +192,21 @@ class ProfileView extends StatelessWidget {
                               title: S.of(context).enter_your_password,
                             ),
                             30.hSize,
-                            MainButtom(
-                              text: S.of(context).save,
-                              color: Colors.blue.shade600,
-                              onPressed: () {},
-                            ),
+                            if (state is! UpdateProfileLoading) ...{
+                              MainButtom(
+                                text: S.of(context).save,
+                                color: Colors.blue.shade600,
+                                onPressed: () async {
+                                  await profileCubit.updateProfile();
+                                },
+                              )
+                            } else ...{
+                              Center(
+                                child: CircularProgressIndicator(
+                                  color: Colors.blue.shade600,
+                                ),
+                              ),
+                            },
                             15.hSize,
                             SizedBox(
                               width: double.infinity,

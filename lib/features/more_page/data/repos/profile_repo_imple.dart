@@ -29,7 +29,7 @@ class ProfilRepoImple extends ProfileRepo {
     required String phone,
     required String email,
     required String password,
-    required String image,
+    dynamic image,
   }) async {
     try {
       Map<String, dynamic> response = await ApiServices.put(
@@ -40,7 +40,7 @@ class ProfilRepoImple extends ProfileRepo {
           'phone': phone,
           'email': email,
           'password': password,
-          'image': image
+        // 'image': image
         },
       );
       return Right(Usermodel.fromJson(response));
