@@ -51,6 +51,11 @@
     "online_payment": " دفع اونلاين",
     "oreder_date": "تاريخ الطلب",
     "order_code": "كود الطلب",
-    "oreder_details": "تفاصيل الطلب"
-  
+    "oreder_details": "تفاصيل الطلب",
+    "quantity": "الكمية",
+    "total_price": "السعر الكلي",
+    "price": "السعر",
+    "payment_method": "طريقة الدفع",
+    "discount": "خصم",
+    "total_order": "الطلب الكلي"
 }

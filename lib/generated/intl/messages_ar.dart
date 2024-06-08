@@ -40,6 +40,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("تاكيد كلمة المرور"),
         "contact": MessageLookupByLibrary.simpleMessage("اتصل بنا"),
         "create_account": MessageLookupByLibrary.simpleMessage("انشاء حساب"),
+        "discount": MessageLookupByLibrary.simpleMessage("خصم"),
         "dont_have_account":
             MessageLookupByLibrary.simpleMessage("ليس لديك حساب ؟"),
         "email_address":
@@ -72,14 +73,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "oreder_date": MessageLookupByLibrary.simpleMessage("تاريخ الطلب"),
         "oreder_details": MessageLookupByLibrary.simpleMessage("تفاصيل الطلب"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+        "payment_method": MessageLookupByLibrary.simpleMessage("طريقة الدفع"),
         "please_login": MessageLookupByLibrary.simpleMessage(
             "الرجاء تسجيل الدخول باستخدام البريد الخاص بك"),
         "please_select_payment_method":
             MessageLookupByLibrary.simpleMessage("الرجاء تحديد طريقة الدفع"),
+        "price": MessageLookupByLibrary.simpleMessage("السعر"),
         "product_details":
             MessageLookupByLibrary.simpleMessage("تفاصيل المنتج"),
         "products": MessageLookupByLibrary.simpleMessage("المنتجات"),
         "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
+        "quantity": MessageLookupByLibrary.simpleMessage("الكمية"),
         "save": MessageLookupByLibrary.simpleMessage("حفظ"),
         "selesct_quantity": MessageLookupByLibrary.simpleMessage("حدد الكمية"),
         "send": MessageLookupByLibrary.simpleMessage("ارسال"),
@@ -88,6 +92,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "suggetion_complaint":
             MessageLookupByLibrary.simpleMessage("الاقتراحات اوالشكاوي"),
         "total": MessageLookupByLibrary.simpleMessage("المجموع"),
+        "total_order": MessageLookupByLibrary.simpleMessage("الطلب الكلي"),
+        "total_price": MessageLookupByLibrary.simpleMessage("السعر الكلي"),
         "type_here": MessageLookupByLibrary.simpleMessage("اكتب هنا"),
         "user_name": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
         "view_all": MessageLookupByLibrary.simpleMessage("اظهار الكل"),

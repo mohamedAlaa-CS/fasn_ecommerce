@@ -41,6 +41,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "contact": MessageLookupByLibrary.simpleMessage("Contact"),
         "create_account":
             MessageLookupByLibrary.simpleMessage("Create Account"),
+        "discount": MessageLookupByLibrary.simpleMessage("Discount"),
         "dont_have_account":
             MessageLookupByLibrary.simpleMessage("Donot have an account ?"),
         "email_address": MessageLookupByLibrary.simpleMessage("Email Address"),
@@ -73,14 +74,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "oreder_date": MessageLookupByLibrary.simpleMessage("Order Date"),
         "oreder_details": MessageLookupByLibrary.simpleMessage("Order details"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "payment_method":
+            MessageLookupByLibrary.simpleMessage("Payment Method"),
         "please_login": MessageLookupByLibrary.simpleMessage(
             "Please sign in with your mail"),
         "please_select_payment_method": MessageLookupByLibrary.simpleMessage(
             "Please Select Payment Method"),
+        "price": MessageLookupByLibrary.simpleMessage("Price"),
         "product_details":
             MessageLookupByLibrary.simpleMessage("Product Details"),
         "products": MessageLookupByLibrary.simpleMessage("Products"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+        "quantity": MessageLookupByLibrary.simpleMessage("Quantity"),
         "save": MessageLookupByLibrary.simpleMessage("Save"),
         "search_Now": MessageLookupByLibrary.simpleMessage("Search Now"),
         "selesct_quantity":
@@ -91,6 +96,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "suggetion_complaint":
             MessageLookupByLibrary.simpleMessage("Your Suggetion or Complaint"),
         "total": MessageLookupByLibrary.simpleMessage("Total"),
+        "total_order": MessageLookupByLibrary.simpleMessage("Total Order"),
+        "total_price": MessageLookupByLibrary.simpleMessage("Total Price"),
         "type_here": MessageLookupByLibrary.simpleMessage("Type Here"),
         "user_name": MessageLookupByLibrary.simpleMessage("User Name"),
         "view_all": MessageLookupByLibrary.simpleMessage("View All"),

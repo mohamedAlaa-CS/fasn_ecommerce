@@ -51,6 +51,12 @@
     "online_payment": "Online Payment",
     "oreder_date": "Order Date",
     "order_code": "Order Code",
-    "oreder_details": "Order details"
+    "oreder_details": "Order details",
+    "quantity": "Quantity",
+    "total_price": "Total Price",
+    "price": "Price",
+    "payment_method": "Payment Method",
+    "discount": "Discount",
+    "total_order": "Total Order"
    
 }
