@@ -10,3 +10,5 @@ final class MainChangeLanguageState extends MainState {}
 final class MainChangeIndexState extends MainState {}
 
 final class MainAddToFavState extends MainState {}
+
+final class MainSetUserState extends MainState {}

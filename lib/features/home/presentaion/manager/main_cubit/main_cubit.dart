@@ -32,6 +32,10 @@ class MainCubit extends Cubit<MainState> {
   }
 
   Usermodel? userModel;
+  setUser(Usermodel userModel) {
+    this.userModel = userModel;
+    emit(MainSetUserState());
+  }
 
   bool isEnglish = true;
   changeLanguage() {

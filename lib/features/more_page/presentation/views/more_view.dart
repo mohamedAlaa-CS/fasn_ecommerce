@@ -27,17 +27,23 @@ class MoreView extends StatelessWidget {
             var moreCubit = MoreCubit.get(context);
             return Column(
               children: [
-                MoreWidget(
-                  onTap: () {
-                    // if (MainCubit.getFalse.userModel != null) {
-                    //   Navigator.pushNamed(context, ProfileView.routeName);
-                    // }
-                    Navigator.pushNamed(context, ProfileView.routeName);
+                BlocConsumer<MainCubit, MainState>(
+                  listener: (context, state) {},
+                  builder: (context, state) {
+                    
+                    return MoreWidget(
+                      onTap: () {
+                        // if (MainCubit.getFalse.userModel != null) {
+                        //   Navigator.pushNamed(context, ProfileView.routeName);
+                        // }
+                        Navigator.pushNamed(context, ProfileView.routeName);
+                      },
+                      isMain: true,
+                      icon: Icons.person,
+                      title: MainCubit.get(context).userModel?.data?.name ??
+                          S.of(context).profile,
+                    );
                   },
-                  isMain: true,
-                  icon: Icons.person,
-                  title: MainCubit.getFalse.userModel?.data?.name ??
-                      S.of(context).profile,
                 ),
                 10.hSize,
                 MoreWidget(

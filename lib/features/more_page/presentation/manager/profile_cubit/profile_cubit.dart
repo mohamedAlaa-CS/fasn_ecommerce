@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:fasn_ecommerce/core/helper/functions/set_image.dart';
+import 'package:fasn_ecommerce/core/router/app_router.dart';
 import 'package:fasn_ecommerce/features/auth/data/models/usermodel/usermodel.dart';
 import 'package:fasn_ecommerce/features/home/presentaion/manager/main_cubit/main_cubit.dart';
 import 'package:fasn_ecommerce/features/more_page/data/repos/profile_repo.dart';
@@ -38,7 +39,7 @@ class ProfileCubit extends Cubit<ProfileState> {
       emit(GetProfileFailed());
     }, (success) {
       usermodel = success;
-      MainCubit.getFalse.userModel = success;
+      MainCubit.get(AppNavigator.context).setUser(success);
 
       nameController.text = success.data!.name!;
       phoneController.text = success.data!.phone!;
