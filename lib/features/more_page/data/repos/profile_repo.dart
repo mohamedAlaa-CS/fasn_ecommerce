@@ -10,6 +10,6 @@ abstract class ProfileRepo {
     required String phone,
     required String email,
     required String password,
-   // dynamic image,
+    // dynamic image,
   });
 }

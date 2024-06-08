@@ -40,7 +40,7 @@ class ProfilRepoImple extends ProfileRepo {
           'phone': phone,
           'email': email,
           'password': password,
-        // 'image': image
+          // 'image': image
         },
       );
       return Right(Usermodel.fromJson(response));

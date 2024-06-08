@@ -11,6 +11,5 @@ abstract class MorePageRepo {
     required String email,
     required String phone,
     required String message,
-
   });
 }

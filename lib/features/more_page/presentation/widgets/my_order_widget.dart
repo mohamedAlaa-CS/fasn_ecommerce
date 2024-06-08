@@ -1,19 +1,16 @@
 import 'package:fasn_ecommerce/core/helper/extensions/assetss_widgets.dart';
 import 'package:fasn_ecommerce/core/utils/app_colors.dart';
 import 'package:fasn_ecommerce/core/utils/app_styles.dart';
+import 'package:fasn_ecommerce/features/more_page/data/models/get_oreders_model.dart';
 import 'package:fasn_ecommerce/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class MyOrderWidget extends StatelessWidget {
-  const MyOrderWidget(
-      {super.key,
-      required this.status,
-      required this.orderDate,
-      required this.orderCode,
-      required this.total});
-  final String status, orderDate;
-  final int orderCode;
-  final double total;
+  const MyOrderWidget({
+    super.key,
+    required this.model,
+  });
+  final GetOredersModel model;
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -48,7 +45,7 @@ class MyOrderWidget extends StatelessWidget {
                   children: [
                     12.hSize,
                     Text(
-                      status,
+                      model.status ?? '',
                       style: AppStyles.style24.copyWith(
                         color: AppColors.black,
                         fontWeight: FontWeight.bold,
@@ -56,21 +53,21 @@ class MyOrderWidget extends StatelessWidget {
                     ),
                     6.hSize,
                     Text(
-                      '${S.of(context).oreder_date}: $orderDate',
+                      '${S.of(context).oreder_date}: ${model.date ?? ''}',
                       style: AppStyles.style18.copyWith(
                         color: AppColors.black,
                       ),
                     ),
                     6.hSize,
                     Text(
-                      '${S.of(context).order_code}: $orderCode',
+                      '${S.of(context).order_code}: ${model.id ?? ''}',
                       style: AppStyles.style18.copyWith(
                         color: AppColors.black,
                       ),
                     ),
                     6.hSize,
                     Text(
-                      '${S.of(context).total}: ${total.toStringAsFixed(2)}',
+                      '${S.of(context).total}: ${model.total?.toStringAsFixed(2) ?? ''}',
                       style: AppStyles.style18.copyWith(
                         color: AppColors.black,
                       ),
