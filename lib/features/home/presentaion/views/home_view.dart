@@ -24,7 +24,7 @@ class HomeView extends StatelessWidget {
         padding:
             const EdgeInsetsDirectional.only(start: 10, end: 10, bottom: 10),
         child: BlocProvider(
-          create: (context) => HomeCubit(HomeRepoImple())..getHomeData(),
+          create: (context) => HomeCubit(HomeRepoImple()),
           child: BlocConsumer<HomeCubit, HomeState>(
             listener: (context, state) {
               if (state is HomeFailed) {

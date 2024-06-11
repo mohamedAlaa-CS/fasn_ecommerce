@@ -10,6 +10,7 @@ part 'home_state.dart';
 class HomeCubit extends Cubit<HomeState> {
   HomeCubit(this.homeRepo) : super(HomeInitial()) {
     pageControllerBanner();
+    returnAllHomeData();
   }
   static HomeCubit get(context) => BlocProvider.of<HomeCubit>(context);
 
@@ -22,12 +23,18 @@ class HomeCubit extends Cubit<HomeState> {
     });
   }
 
+  returnAllHomeData() async {
+    await Future.wait([
+      getHomeData(),
+      getCategoriesData(),
+    ]);
+  }
+
   List<ProductModel> productList = [];
   List<BannerModel> bannerList = [];
 
   final HomeRepo homeRepo;
-  getHomeData() async {
-    await getCategoriesData();
+  Future<void> getHomeData() async {
     emit(HomeLoading());
     var result = await homeRepo.getHomeData();
     result.fold((erroe) {
@@ -40,7 +47,7 @@ class HomeCubit extends Cubit<HomeState> {
   }
 
   List<CategoryModel> categoriesList = [];
-  getCategoriesData() async {
+  Future<void> getCategoriesData() async {
     emit(HomeLoading());
     var result = await homeRepo.getCategoresData();
     result.fold((erroe) {
