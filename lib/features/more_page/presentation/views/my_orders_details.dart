@@ -96,11 +96,11 @@ class MyOrderDetails extends StatelessWidget {
                                       ?.toDouble() ??
                                   0.0),
                           10.hSize,
-                          // PriceWidget(
-                          //     title: S.of(context).discount,
-                          //     price: orderCubit.orderDetailsModel?.discount
-                          //             as double ??
-                          //         0.0),
+                          PriceWidget(
+                              title: S.of(context).discount,
+                              price: orderCubit.orderDetailsModel?.discount
+                                      ?.toDouble() ??
+                                  0.0),
                           12.hSize,
                           const Divider(),
                           PriceWidget(
