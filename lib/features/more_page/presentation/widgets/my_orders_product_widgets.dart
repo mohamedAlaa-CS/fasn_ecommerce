@@ -15,7 +15,7 @@ class MyOrderDetailsWidget extends StatelessWidget {
     required this.quantity,
   });
   final String image, title;
-  final double price;
+  final num price;
   final int quantity;
   @override
   Widget build(BuildContext context) {
@@ -35,12 +35,15 @@ class MyOrderDetailsWidget extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            CachedNetworkImage(
-              imageUrl: image,
-              // 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png',
-              fit: BoxFit.cover,
-              height: isPortrait ? context.height / 8 : context.width / 7,
-              width: isPortrait ? context.width / 4.8 : context.height / 3,
+            ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: CachedNetworkImage(
+                imageUrl: image,
+                // 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png',
+                fit: BoxFit.cover,
+                height: isPortrait ? context.height / 8 : context.width / 7,
+                width: isPortrait ? context.width / 4.8 : context.height / 3,
+              ),
             ),
             10.wSize,
             Expanded(
@@ -51,20 +54,20 @@ class MyOrderDetailsWidget extends StatelessWidget {
                     title,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
-                    style: AppStyles.style24.copyWith(color: AppColors.black),
+                    style: AppStyles.style20.copyWith(color: AppColors.black),
                   ),
                   4.hSize,
                   4.hSize,
                   Row(
                     children: [
                       Text(
-                        '\$ ${price.toStringAsFixed(2)}',
+                        '\$${price.round()}',
                         style:
                             AppStyles.style18.copyWith(color: AppColors.black),
                       ),
                       8.wSize,
                       Text(
-                        ' ${S.of(context).quantity}: $quantity',
+                        '${S.of(context).quantity}: $quantity',
                         style:
                             AppStyles.style18.copyWith(color: AppColors.black),
                       ),
