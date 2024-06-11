@@ -51,4 +51,19 @@ class ProfilRepoImple extends ProfileRepo {
       return Left(ServerFailure(e.toString()));
     }
   }
+
+  @override
+  Future<Either<Failure, String>> logOut({required String token}) async {
+    try {
+      Map<String, dynamic> response =
+          await ApiServices.post(endPoint: EndPoint.logout, isAuth: true);
+      return Right(response['message']);
+    } catch (e) {
+      if (e is DioException) {
+        return Left(ServerFailure.fromDiorError(e));
+      } else {
+        return Left(ServerFailure(e.toString()));
+      }
+    }
+  }
 }

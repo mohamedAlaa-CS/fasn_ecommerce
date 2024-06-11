@@ -12,4 +12,7 @@ abstract class ProfileRepo {
     required String password,
     // dynamic image,
   });
+  Future<Either<Failure, String>> logOut({
+    required String token,
+  });
 }

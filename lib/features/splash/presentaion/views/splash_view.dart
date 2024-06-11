@@ -18,7 +18,7 @@ class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
     Future.delayed(const Duration(seconds: 3), () {
-      Navigator.of(context).pushNamed(
+      Navigator.of(context).pushReplacementNamed(
         LocalData.token == null ? LoginPage.routeName : MainView.routeName,
       );
     });

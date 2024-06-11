@@ -29,12 +29,12 @@ class LocalData {
     return null;
   }
 
-  static saveToken(String value) {
-    getIt.get<SharedPreferences>().setString(AppStrings.token, value);
+  static saveToken(String value) async {
+    await getIt.get<SharedPreferences>().setString(AppStrings.token, value);
   }
 
-  static remove(String value) {
-    getIt.get<SharedPreferences>().remove(value);
+  static Future<bool> remove(String key) async {
+    return await getIt.get<SharedPreferences>().remove(key);
   }
 
 //! get token

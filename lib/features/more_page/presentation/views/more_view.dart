@@ -1,7 +1,12 @@
 import 'package:fasn_ecommerce/core/helper/extensions/assetss_widgets.dart';
+import 'package:fasn_ecommerce/core/utils/app_strings.dart';
+import 'package:fasn_ecommerce/core/utils/local_data.dart';
+import 'package:fasn_ecommerce/features/auth/presentation/views/login_view.dart';
 import 'package:fasn_ecommerce/features/home/presentaion/manager/main_cubit/main_cubit.dart';
 import 'package:fasn_ecommerce/features/more_page/data/repos/more_page_repo_imple.dart';
+import 'package:fasn_ecommerce/features/more_page/data/repos/profile_repo_imple.dart';
 import 'package:fasn_ecommerce/features/more_page/presentation/manager/more_cubit/more_cubit.dart';
+import 'package:fasn_ecommerce/features/more_page/presentation/manager/profile_cubit/profile_cubit.dart';
 import 'package:fasn_ecommerce/features/more_page/presentation/views/about_us_view.dart';
 import 'package:fasn_ecommerce/features/more_page/presentation/views/add_fead_back_view.dart';
 import 'package:fasn_ecommerce/features/more_page/presentation/views/common_question_view.dart';
@@ -107,19 +112,31 @@ class MoreView extends StatelessWidget {
 
                 //? logout button ================
                 10.hSize,
-                MoreWidget(
-                  onTap: () {
-                    ShowDialog(
-                      context,
-                      message: S.of(context).are_you_sure_you_want_to_logout,
-                      yesOntap: () {},
-                      noOntap: () {
-                        Navigator.pop(context);
-                      },
-                    );
-                  },
-                  icon: Icons.logout,
-                  title: S.of(context).logout,
+                BlocProvider(
+                  create: (context) => ProfileCubit(ProfilRepoImple()),
+                  child: BlocConsumer<ProfileCubit, ProfileState>(
+                    listener: (context, state) {},
+                    builder: (context, state) {
+                      return MoreWidget(
+                        onTap: () {
+                          ShowDialog(
+                            context,
+                            message:
+                                S.of(context).are_you_sure_you_want_to_logout,
+                            yesOntap: () {
+                              ProfileCubit.get(context).logOut();
+                           
+                            },
+                            noOntap: () {
+                              Navigator.pop(context);
+                            },
+                          );
+                        },
+                        icon: Icons.logout,
+                        title: S.of(context).logout,
+                      );
+                    },
+                  ),
                 ),
               ],
             );

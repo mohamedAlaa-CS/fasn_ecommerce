@@ -20,3 +20,9 @@ final class UpdateProfileSuccess extends ProfileState {}
 final class UpdateProfileFailed extends ProfileState {}
 
 final class SetImageSuccess extends ProfileState {}
+
+final class LogOutFailed extends ProfileState {}
+
+final class LogOutSuccess extends ProfileState {}
+
+final class LogOutLoading extends ProfileState {}

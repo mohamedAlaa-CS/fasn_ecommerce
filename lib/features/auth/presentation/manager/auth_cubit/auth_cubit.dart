@@ -33,8 +33,8 @@ class AuthCubit extends Cubit<AuthState> {
       emit(AuthLoginFailed(error.message));
     }, (userModel) {
       emit(AuthLoginSuccess(userModel));
+      MainCubit.getFalse.setUser(userModel);
       this.userModel = userModel;
-      MainCubit.getFalse.userModel = userModel;
     });
   }
 

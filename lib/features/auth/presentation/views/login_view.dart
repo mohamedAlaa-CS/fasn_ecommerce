@@ -3,6 +3,7 @@ import 'package:fasn_ecommerce/core/helper/extensions/context_size.dart';
 import 'package:fasn_ecommerce/core/helper/functions/show_snack_bar.dart';
 import 'package:fasn_ecommerce/core/utils/app_colors.dart';
 import 'package:fasn_ecommerce/core/utils/app_strings.dart';
+import 'package:fasn_ecommerce/core/utils/app_styles.dart';
 import 'package:fasn_ecommerce/core/utils/app_validator.dart';
 import 'package:fasn_ecommerce/core/utils/local_data.dart';
 import 'package:fasn_ecommerce/core/widgets/app_text_form.dart';
@@ -39,7 +40,8 @@ class LoginPage extends StatelessWidget {
                       state.userModel.message ?? '',
                     );
                     LocalData.saveToken(state.userModel.data?.token ?? '');
-                    Navigator.of(context).pushNamed(MainView.routeName);
+                    Navigator.of(context)
+                        .pushReplacementNamed(MainView.routeName);
                   } else {
                     showSnackbar(
                       state.userModel.message ?? '',
@@ -121,6 +123,10 @@ class LoginPage extends StatelessWidget {
                           ),
                         } else ...{
                           MainButtom(
+                            textStyle: AppStyles.style20.copyWith(
+                              color: AppColors.black,
+                              fontWeight: FontWeight.bold,
+                            ),
                             text: localization.login,
                             onPressed: () {
                               authCubit.tryLogin();

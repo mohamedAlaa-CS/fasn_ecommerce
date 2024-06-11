@@ -3,6 +3,7 @@ import 'package:fasn_ecommerce/core/helper/extensions/context_size.dart';
 import 'package:fasn_ecommerce/core/helper/functions/show_snack_bar.dart';
 import 'package:fasn_ecommerce/core/utils/app_colors.dart';
 import 'package:fasn_ecommerce/core/utils/app_strings.dart';
+import 'package:fasn_ecommerce/core/utils/app_styles.dart';
 import 'package:fasn_ecommerce/core/utils/app_validator.dart';
 import 'package:fasn_ecommerce/core/widgets/app_text_form.dart';
 import 'package:fasn_ecommerce/core/widgets/main_buttom.dart';
@@ -111,6 +112,10 @@ class SignupView extends StatelessWidget {
                           ),
                         } else ...{
                           MainButtom(
+                            textStyle: AppStyles.style20.copyWith(
+                              color: AppColors.black,
+                              fontWeight: FontWeight.bold,
+                            ),
                             text: localization.sign_up,
                             onPressed: () {
                               signupCubit.trySignup();
