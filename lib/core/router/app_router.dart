@@ -7,6 +7,7 @@ import 'package:fasn_ecommerce/features/category/presentation/views/category_vie
 import 'package:fasn_ecommerce/features/category/presentation/views/prodect_of_category.dart';
 import 'package:fasn_ecommerce/features/category/presentation/views/product_details_view.dart';
 import 'package:fasn_ecommerce/features/home/presentaion/views/main_view.dart';
+import 'package:fasn_ecommerce/features/more_page/presentation/manager/more_cubit/more_cubit.dart';
 import 'package:fasn_ecommerce/features/more_page/presentation/manager/order_cubit/order_cubit.dart';
 import 'package:fasn_ecommerce/features/more_page/presentation/views/about_us_view.dart';
 import 'package:fasn_ecommerce/features/more_page/presentation/views/add_fead_back_view.dart';
@@ -51,10 +52,10 @@ class AppRouter {
                 ));
 
       case QummanQustionPage.routeName:
-        final commonQuestion = settings.arguments;
         return MaterialPageRoute(
-            builder: (context) => QummanQustionPage(
-                  commonQuestio: commonQuestion,
+            builder: (context) => BlocProvider<MoreCubit>.value(
+                  value: getIt.get<MoreCubit>()..getCommonQuestion(),
+                  child: const QummanQustionPage(),
                 ));
       case AboutUsView.routeName:
         return MaterialPageRoute(builder: (context) => const AboutUsView());

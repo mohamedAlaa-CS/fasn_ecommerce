@@ -20,18 +20,20 @@ class FavouritePage extends StatelessWidget {
           return Column(
             children: [
               Expanded(
-                child: ListView.separated(
-                    separatorBuilder: (context, index) => 10.hSize,
-                    itemCount: favCubit.favouritesList.length,
-                    itemBuilder: (context, index) {
-                      return FavProductWidget(
-                        product: favCubit.favouritesList[index],
-                        deletOnTap: () async {
-                          await favCubit
-                              .removeProduct(favCubit.favouritesList[index]);
-                        },
-                      );
-                    }),
+                child: (state is FavouritesLoading)
+                    ? const Center(child: CircularProgressIndicator())
+                    : ListView.separated(
+                        separatorBuilder: (context, index) => 10.hSize,
+                        itemCount: favCubit.favouritesList.length,
+                        itemBuilder: (context, index) {
+                          return FavProductWidget(
+                            product: favCubit.favouritesList[index],
+                            deletOnTap: () async {
+                              await favCubit.removeProduct(
+                                  favCubit.favouritesList[index]);
+                            },
+                          );
+                        }),
               ),
               7.hSize,
               // AddToCartButton(

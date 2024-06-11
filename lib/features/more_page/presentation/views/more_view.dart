@@ -1,7 +1,4 @@
 import 'package:fasn_ecommerce/core/helper/extensions/assetss_widgets.dart';
-import 'package:fasn_ecommerce/core/utils/app_strings.dart';
-import 'package:fasn_ecommerce/core/utils/local_data.dart';
-import 'package:fasn_ecommerce/features/auth/presentation/views/login_view.dart';
 import 'package:fasn_ecommerce/features/home/presentaion/manager/main_cubit/main_cubit.dart';
 import 'package:fasn_ecommerce/features/more_page/data/repos/more_page_repo_imple.dart';
 import 'package:fasn_ecommerce/features/more_page/data/repos/profile_repo_imple.dart';
@@ -99,14 +96,10 @@ class MoreView extends StatelessWidget {
                   icon: Icons.question_mark_rounded,
                   title: S.of(context).common_questions,
                   onTap: () async {
-                    await moreCubit.getCommonQuestion();
-                    Future.delayed(const Duration(seconds: 1), () {
-                      Navigator.pushNamed(
-                        context,
-                        QummanQustionPage.routeName,
-                        arguments: moreCubit.commonQuestionList,
-                      );
-                    });
+                    Navigator.pushNamed(
+                      context,
+                      QummanQustionPage.routeName,
+                    );
                   },
                 ),
 
@@ -125,7 +118,6 @@ class MoreView extends StatelessWidget {
                                 S.of(context).are_you_sure_you_want_to_logout,
                             yesOntap: () {
                               ProfileCubit.get(context).logOut();
-                           
                             },
                             noOntap: () {
                               Navigator.pop(context);
