@@ -41,7 +41,7 @@ class OrderCubit extends Cubit<OrderState> {
         emit(GetOrderDetailsFailed());
 
         showSnackbar(l.message, error: true);
-        log(l.message);
+     
       },
       (r) {
         emit(GetOrderDetailsSuccess());

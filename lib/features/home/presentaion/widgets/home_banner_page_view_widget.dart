@@ -16,7 +16,7 @@ class HomeBannerPageViewWidget extends StatelessWidget {
   final List<BannerModel> bannerList;
   @override
   Widget build(BuildContext context) {
-    log(bannerList.length.toString());
+  
     bool isOrientationPortrait =
         MediaQuery.of(context).orientation == Orientation.portrait;
     return SizedBox(

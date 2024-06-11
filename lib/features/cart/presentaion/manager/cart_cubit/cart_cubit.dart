@@ -25,7 +25,7 @@ class CartCubit extends Cubit<CartState> {
       (l) {
         emit(CartFailed(message: l.message));
 
-        log(l.message);
+   
 
         showSnackbar(l.message, error: true);
       },

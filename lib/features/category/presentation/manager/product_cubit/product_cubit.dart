@@ -80,7 +80,7 @@ class ProductCubit extends Cubit<ProductState> {
     result.fold((error) {
       emit(ProdectAddToCartFailed());
       showSnackbar(error.message, error: true);
-      log(error.message);
+  
     }, (success) async {
       emit(ProdectAddToCartSuccess());
       showSnackbar(success.message ?? '');
