@@ -25,8 +25,8 @@ class HomeCubit extends Cubit<HomeState> {
 
   returnAllHomeData() async {
     await Future.wait([
-      getHomeData(),
-      getCategoriesData(),
+      getHomeData(),//-> 2
+      getCategoriesData(),//->3
     ]);
   }
 

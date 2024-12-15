@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:fasn_ecommerce/core/helper/functions/show_snack_bar.dart';
 import 'package:fasn_ecommerce/features/more_page/data/models/get_oreders_model.dart';
 import 'package:fasn_ecommerce/features/more_page/data/models/oreder_details_model/oreder_details_model.dart';
@@ -38,10 +36,9 @@ class OrderCubit extends Cubit<OrderState> {
 
     result.fold(
       (l) {
-        emit(GetOrderDetailsFailed());
+        emit(GetOrderDetailsFailed(l.message));
 
         showSnackbar(l.message, error: true);
-     
       },
       (r) {
         emit(GetOrderDetailsSuccess());

@@ -11,8 +11,12 @@ final class GetOrdersSuccess extends OrderState {}
 
 final class GetOrdersFailed extends OrderState {}
 
-final class GetOrderDetailsLoading extends OrderState {}
+ class GetOrderDetailsLoading extends OrderState {}
 
-final class GetOrderDetailsSuccess extends OrderState {}
+ class GetOrderDetailsSuccess extends OrderState {}
 
-final class GetOrderDetailsFailed extends OrderState {}
+ class GetOrderDetailsFailed extends OrderState {
+   final String error;
+
+   GetOrderDetailsFailed(this.error);
+ }

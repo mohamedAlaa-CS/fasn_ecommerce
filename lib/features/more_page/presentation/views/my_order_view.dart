@@ -43,12 +43,13 @@ class MyOrderView extends StatelessWidget {
                               itemBuilder: (context, index) {
                                 return GestureDetector(
                                   onTap: () {
-                                    orderCubit.getDeatilsOrder(
-                                      id: orderCubit.myOrders[index].id ?? 0,
-                                    );
+                                    // orderCubit.getDeatilsOrder(
+                                    //   id: orderCubit.myOrders[index].id ?? 0,
+                                    // );
                                     Navigator.of(context).pushNamed(
                                       MyOrderDetails.routeName,
-                                      
+                                      arguments:
+                                          orderCubit.myOrders[index].id ?? 0,
                                     );
                                   },
                                   child: MyOrderWidget(

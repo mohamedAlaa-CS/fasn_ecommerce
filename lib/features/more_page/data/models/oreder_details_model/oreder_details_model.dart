@@ -3,13 +3,13 @@ import 'package:fasn_ecommerce/features/more_page/data/models/oreder_details_mod
 import 'address.dart';
 
 class OrederDetailsModel {
-  int? id;
+  num? id;
   num? cost;
-  int? discount;
+  num? discount;
   num? points;
-  double? vat;
-  double? total;
-  int? pointsCommission;
+  num? vat;
+  num? total;
+  num? pointsCommission;
   String? promoCode;
   String? paymentMethod;
   String? date;
@@ -35,13 +35,13 @@ class OrederDetailsModel {
 
   factory OrederDetailsModel.fromJson(Map<String, dynamic> json) {
     return OrederDetailsModel(
-      id: json['id'] as int?,
+      id: json['id'] as num?,
       cost: json['cost'] as num?,
-      discount: json['discount'] as int?,
+      discount: json['discount'] as num?,
       points: json['points'] as num?,
-      vat: json['vat'] as double?,
-      total: json['total'] as double?,
-      pointsCommission: json['points_commission'] as int?,
+      vat: json['vat'] as num?,
+      total: json['total'] as num?,
+      pointsCommission: json['points_commission'] as num?,
       promoCode: json['promo_code'] as String?,
       paymentMethod: json['payment_method'] as String?,
       date: json['date'] as String?,

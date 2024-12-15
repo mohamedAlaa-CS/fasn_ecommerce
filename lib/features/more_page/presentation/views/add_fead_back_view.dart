@@ -51,7 +51,7 @@ class AddFeadbackView extends StatelessWidget {
                         controller: moreCubit.nameController,
                         title: S.of(context).full_name,
                         hintText: S.of(context).enter_your_full_name,
-                        textType: TextInputType.number,
+                        textType: TextInputType.name,
                       ),
                       14.hSize,
                       MainTextField(

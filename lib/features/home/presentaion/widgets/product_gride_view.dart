@@ -14,7 +14,7 @@ class ProdectGridVew extends StatelessWidget {
         crossAxisCount: 2,
         mainAxisSpacing: 10,
         crossAxisSpacing: 10,
-        childAspectRatio: isPortrait ? (1 / 1.55) : (1 / 1.25),
+        childAspectRatio: isPortrait ? (1 / 1.7) : (1 / 1.25),
       ),
       itemBuilder: (context, index) => GestureDetector(
         onTap: () {},

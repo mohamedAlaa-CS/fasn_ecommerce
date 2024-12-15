@@ -5,8 +5,8 @@ class Address {
   String? region;
   String? details;
   String? notes;
-  int? latitude;
-  int? longitude;
+  double? latitude;
+  double? longitude;
 
   Address({
     this.id,
@@ -26,8 +26,8 @@ class Address {
         region: json['region'] as String?,
         details: json['details'] as String?,
         notes: json['notes'] as String?,
-        latitude: json['latitude'] as int?,
-        longitude: json['longitude'] as int?,
+        latitude: json['latitude'] as double?,
+        longitude: json['longitude'] as double?,
       );
 
   Map<String, dynamic> toJson() => {

@@ -70,9 +70,10 @@ class AppRouter {
                   child: const MyOrderView(),
                 ));
       case MyOrderDetails.routeName:
+        var orderId = settings.arguments as int;
         return MaterialPageRoute(
           builder: (context) => BlocProvider<OrderCubit>.value(
-            value: getIt.get<OrderCubit>(),
+            value: getIt.get<OrderCubit>()..getDeatilsOrder(id: orderId),
             child: const MyOrderDetails(),
           ),
         );
